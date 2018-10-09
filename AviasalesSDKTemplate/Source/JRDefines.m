@@ -36,7 +36,7 @@ BOOL iPhone(void) {
 }
 
 BOOL iPhoneWithHeight(CGFloat height) {
-    CGSize screneSize = [[ UIScreen mainScreen ] bounds ].size;
+    CGSize screneSize = [[UIScreen mainScreen] bounds].size;
     return iPhone() && (fabs( ( double ) MAX(screneSize.width, screneSize.height) - ( double )height ) < DBL_EPSILON );
 }
 
@@ -55,6 +55,12 @@ BOOL iPhone55Inch(void) {
 BOOL iPhone58Inch(void) {
     return iPhoneWithHeight(812);
 }
+BOOL iPhone61Inch(void) {
+    return iPhoneWithHeight(896) && [UIScreen mainScreen].scale == 2.0;
+}
+BOOL iPhone65Inch(void) {
+    return iPhoneWithHeight(896) && [UIScreen mainScreen].scale == 3.0;
+}
 
 BOOL iPad(void) {
     return (UI_USER_INTERFACE_IDIOM()== UIUserInterfaceIdiomPad);
@@ -67,6 +73,8 @@ DeviceSizeType __attribute__((const))  CurrentDeviceSizeType() {
         return res;
     } else {
         res = iPad()    ?   DeviceSizeTypeIPad :
+        iPhone65Inch()  ?   DeviceSizeTypeIPhone65Inch:
+        iPhone61Inch()  ?   DeviceSizeTypeIPhone61Inch:
         iPhone58Inch()  ?   DeviceSizeTypeIPhone58Inch:
         iPhone55Inch()  ?   DeviceSizeTypeIPhone55Inch:
         iPhone47Inch()  ?   DeviceSizeTypeIPhone47Inch:

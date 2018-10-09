@@ -14,7 +14,7 @@
 
 @interface JRFilterCellsFactory : NSObject
 
-- (instancetype)initWithTableView:(nonnull UITableView *)tableView withFilterMode:(JRFilterMode)mode;
+- (nonnull instancetype)initWithTableView:(nonnull UITableView *)tableView withFilterMode:(JRFilterMode)mode;
 
 - (nonnull UITableViewCell *)cellByItem:(nonnull JRFilterItem *)item;
 - (CGFloat)heightForCellByItem:(nonnull JRFilterItem *)item;

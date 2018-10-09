@@ -13,7 +13,7 @@ class ASTGroupedSearchVC: ASTBaseSearchTableVC, UISearchBarDelegate, UISearchCon
 
     var searchInfo: HLSearchInfo?
     var searchController: UISearchController!
-    var resultsTableController = ASTSearchResultsVC(style: .grouped)
+    var resultsTableController = ASTBaseSearchTableVC(style: .grouped)
     var initialCustomPointSelectionLocation = CLLocation()
 
     override func viewDidLoad() {
@@ -36,7 +36,6 @@ class ASTGroupedSearchVC: ASTBaseSearchTableVC, UISearchBarDelegate, UISearchCon
         resultsTableController.tableView.dataSource = self
 
         definesPresentationContext = true
-        extendedLayoutIncludesOpaqueBars = true
 
         navigationItem.backBarButtonItem = UIBarButtonItem.backBarButtonItem()
     }

@@ -100,13 +100,13 @@ class HLMapViewConfigurator: NSObject {
             maxLon = max(maxLon, point.location.coordinate.longitude)
         }
         let center = CLLocationCoordinate2DMake((maxLat + minLat) / 2.0, (maxLon + minLon) / 2.0)
-        let span = MKCoordinateSpanMake((maxLat - minLat) * kMapRegionMultiplier, (maxLon - minLon) * kMapRegionMultiplier)
+        let span = MKCoordinateSpan.init(latitudeDelta: (maxLat - minLat) * kMapRegionMultiplier, longitudeDelta: (maxLon - minLon) * kMapRegionMultiplier)
 
-        return MKCoordinateRegionMake(center, span)
+        return MKCoordinateRegion.init(center: center, span: span)
     }
 
     fileprivate static func singleHotelRegion(_ hotel: HDKHotel) -> MKCoordinateRegion {
         let location = CLLocationCoordinate2DMake(CLLocationDegrees(hotel.latitude), CLLocationDegrees(hotel.longitude))
-        return MKCoordinateRegionMake(location, MKCoordinateSpanMake(0.01, 0.01))
+        return MKCoordinateRegion.init(center: location, span: MKCoordinateSpan.init(latitudeDelta: 0.01, longitudeDelta: 0.01))
     }
 }

@@ -32,15 +32,15 @@ class HLSpinnerProgressView: UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.alpha = 0.0
 
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: ["selfView": self])
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[selfView]|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: ["selfView": self])
+        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutConstraint.FormatOptions.alignAllCenterY, metrics: nil, views: ["selfView": self])
+        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[selfView]|", options: NSLayoutConstraint.FormatOptions.alignAllCenterY, metrics: nil, views: ["selfView": self])
         onView.addConstraints(horizontalConstraint)
         onView.addConstraints(verticalConstraint)
         self.setNeedsLayout()
         self.layoutIfNeeded()
 
         let duration = (animated ? self.defaultShowDuration : 0.0)
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(),
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(),
             animations: { [weak self] () -> Void in
                 self?.alpha = 1.0
             },
@@ -48,7 +48,7 @@ class HLSpinnerProgressView: UIView {
     }
 
     func dismiss(_ duration: TimeInterval, delay: TimeInterval, completion: (() -> Void)?) {
-        UIView.animate(withDuration: duration, delay: delay, options: UIViewAnimationOptions(),
+        UIView.animate(withDuration: duration, delay: delay, options: UIView.AnimationOptions(),
             animations: { [weak self] () -> Void in
                 self?.alpha = 0.0
             }, completion: { [weak self] (finished) -> Void in

@@ -183,7 +183,7 @@ class HLIpadResultsVC: HLCommonResultsVC {
                 sortName += " " + distanceLocation
             }
         }
-        sortButton?.setTitle(sortName, for: UIControlState())
+        sortButton?.setTitle(sortName, for: UIControl.State())
     }
 
     fileprivate func areFiltersInFullscreenMode(_ orientation: UIInterfaceOrientation) -> Bool {

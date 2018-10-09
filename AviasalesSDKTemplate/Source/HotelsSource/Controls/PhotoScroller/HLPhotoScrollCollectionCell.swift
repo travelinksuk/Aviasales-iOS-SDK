@@ -26,13 +26,13 @@ class HLPhotoScrollCollectionCell: UICollectionViewCell {
         }
     }
 
-    var placeholderContentMode: UIViewContentMode = UIViewContentMode.center {
+    var placeholderContentMode: UIView.ContentMode = UIView.ContentMode.center {
         didSet {
             self.photoView.placeholderContentMode = self.placeholderContentMode
         }
     }
 
-    var imageContentMode: UIViewContentMode = UIViewContentMode.scaleAspectFill {
+    var imageContentMode: UIView.ContentMode = UIView.ContentMode.scaleAspectFill {
         didSet {
             self.photoView.imageContentMode = self.imageContentMode
         }
@@ -99,7 +99,7 @@ class HLPhotoScrollCollectionCell: UICollectionViewCell {
 
     func createPhotoView () -> HLPhotoView {
         let photoView = HLPhotoView()
-        photoView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        photoView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
 
         return photoView
     }
@@ -124,7 +124,7 @@ class HLPhotoScrollCollectionCell: UICollectionViewCell {
     // MARK: - Private methods
 
     fileprivate func initializeProgrammatically() {
-        self.layer.contentsGravity = kCAGravityCenter
+        self.layer.contentsGravity = CALayerContentsGravity.center
         self.layer.masksToBounds = true
 
         self.contentView.addSubview(self.photoView)

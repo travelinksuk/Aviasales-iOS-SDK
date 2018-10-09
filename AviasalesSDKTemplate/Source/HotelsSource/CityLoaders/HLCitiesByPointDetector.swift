@@ -18,7 +18,7 @@ class HLCitiesByPointDetector: NSObject {
             return
         }
 
-        ServiceLocator.shared.api.nearbyCities(location: location).promise().then { cities in
+        ServiceLocator.shared.api.nearbyCities(location: location).promise().done { cities in
             self.completionBlock?(cities)
         }.catch { error in
             self.errorBlock?(error as NSError)

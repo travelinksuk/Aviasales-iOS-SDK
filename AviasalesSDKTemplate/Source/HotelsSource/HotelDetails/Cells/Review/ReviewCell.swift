@@ -23,7 +23,7 @@ class ReviewCell: UITableViewCell {
 
     weak var delegate: ReviewCellDelegate?
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         createSubviews()
         createConstraints()
@@ -103,7 +103,7 @@ class ReviewCell: UITableViewCell {
     }
 
     static func preferredHeight() -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 
 }

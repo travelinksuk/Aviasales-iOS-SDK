@@ -16,7 +16,7 @@ class HLHotelDetailsActivityIndicatorTableCell: HLHotelDetailsTableCell {
     // MARK: - Internal methods
 
     func startAnimating() {
-        self.activityIndicator.activityIndicatorViewStyle = .gray
+        self.activityIndicator.style = .gray
         self.activityIndicator.startAnimating()
     }
 

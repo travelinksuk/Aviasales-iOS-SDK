@@ -92,7 +92,7 @@ class HLKidsPickerTableCell: UITableViewCell {
         willBeginEditingCellHandler?(self)
 
         let duration = animated ? 0.3 : 0.0
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(), animations: { [unowned self] () -> Void in
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(), animations: { [unowned self] () -> Void in
             self.rightDeleteButtonConstraint.constant = 0.0
             self.leftKidCountIconConstraint.constant = self.kKidCountIconLeftConstraint + self.kDeleteButtonRightConstraint
             self.layoutIfNeeded()
@@ -103,7 +103,7 @@ class HLKidsPickerTableCell: UITableViewCell {
 
     func hideDeleteButton(_ animated: Bool) {
         let duration = animated ? 0.3 : 0.0
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(), animations: { [unowned self] () -> Void in
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(), animations: { [unowned self] () -> Void in
             self.rightDeleteButtonConstraint.constant = self.kDeleteButtonRightConstraint
             self.leftKidCountIconConstraint.constant = self.kKidCountIconLeftConstraint
             self.layoutIfNeeded()
@@ -160,15 +160,15 @@ class HLKidsPickerTableCell: UITableViewCell {
         constraint = max(min(constraint, 0.0), kDeleteButtonRightConstraint)
 
         switch gestureRecognizer.state {
-        case UIGestureRecognizerState.changed:
+        case UIGestureRecognizer.State.changed:
             rightDeleteButtonConstraint.constant = constraint
             leftKidCountIconConstraint.constant = kDeleteButtonRightConstraint + kKidCountIconLeftConstraint - constraint
             layoutIfNeeded()
 
-        case UIGestureRecognizerState.ended:
+        case UIGestureRecognizer.State.ended:
             velocity.x < 0 ? showDeleteButton(true) : hideDeleteButton(true)
 
-        case UIGestureRecognizerState.cancelled:
+        case UIGestureRecognizer.State.cancelled:
              hideDeleteButton(true)
 
         default:

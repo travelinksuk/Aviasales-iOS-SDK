@@ -30,7 +30,7 @@ class HLZoomablePhotoScrollCollectionCell: HLPhotoScrollCollectionCell {
 
     override func createPhotoView () -> HLPhotoView {
         let photoView = HLZoomablePhotoView()
-        photoView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        photoView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
 
         return photoView
     }

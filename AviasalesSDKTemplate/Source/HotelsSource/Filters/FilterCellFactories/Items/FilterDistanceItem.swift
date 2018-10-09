@@ -11,7 +11,7 @@ class FilterDistanceItem: FilterSliderItem {
         cell.selectionStyle = .none
 
         cell.pointSelectionDelegate = pointSelectionDelegate
-        cell.pointButton.setTitle(filter.distanceLocationPoint?.name ?? "", for: UIControlState())
+        cell.pointButton.setTitle(filter.distanceLocationPoint?.name ?? "", for: UIControl.State())
 
         return cell
     }

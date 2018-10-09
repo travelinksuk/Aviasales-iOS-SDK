@@ -13,9 +13,9 @@
 
 @property (nonatomic, assign, readonly) BOOL isSimpleSearch;
 
-@property (nonatomic, strong, readonly) JRFilterTicketBounds *ticketBounds;
-@property (nonatomic, strong, readonly) NSArray *travelSegmentsBounds;
+@property (nonatomic, strong, readonly, nonnull) JRFilterTicketBounds *ticketBounds;
+@property (nonatomic, strong, readonly, nonnull) NSArray *travelSegmentsBounds;
 
-- (instancetype)initWithSearchResults:(nonnull NSOrderedSet <JRSDKTicket *> *)tickets forSearchInfo:(nonnull JRSDKSearchInfo *)searchInfo;
+- (nonnull instancetype)initWithSearchResults:(nonnull NSOrderedSet <JRSDKTicket *> *)tickets forSearchInfo:(nonnull JRSDKSearchInfo *)searchInfo;
 
 @end

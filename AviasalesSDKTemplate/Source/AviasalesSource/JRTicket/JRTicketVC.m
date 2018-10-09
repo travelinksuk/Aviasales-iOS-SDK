@@ -71,6 +71,8 @@ static const NSTimeInterval kSearchResultsTTL = 15 * 60;
     }
     
     [self updateContent];
+
+    [self trackFlightsTicketEvent];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -150,6 +152,13 @@ static const NSTimeInterval kSearchResultsTTL = 15 * 60;
     self.infoPanelView.showOtherAgencyHandler = ^() {
         [weakSelf showOtherAgencies];
     };
+}
+
+#pragma mark - Analytics
+
+- (void)trackFlightsTicketEvent {
+    FlightsTicketEvent *event = [[FlightsTicketEvent alloc] initWithTicket:self.ticket];
+    [AnalyticsManager logWithEvent:event];
 }
 
 #pragma mark - UITableViewDataSource methods

@@ -43,7 +43,7 @@ class ProgressView: UIView {
         animation.fromValue = 0
         animation.toValue = 1
         animation.isRemovedOnCompletion = false
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
 
         layer.add(animation, forKey: "strokeEnd")
     }

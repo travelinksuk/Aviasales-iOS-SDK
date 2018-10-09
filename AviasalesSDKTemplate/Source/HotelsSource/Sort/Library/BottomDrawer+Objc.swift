@@ -36,7 +36,7 @@ extension BottomDrawer {
         }
     }
 
-    @objc var actionButtonTitleAttributes: [NSAttributedStringKey: Any] {
+    @objc var actionButtonTitleAttributes: [NSAttributedString.Key: Any] {
         set {
             actionButtonStyle.titleAttributes = newValue
         }
@@ -73,7 +73,7 @@ extension BottomDrawer {
         }
     }
 
-    @objc static var actionButtonTitleAttributes: [NSAttributedStringKey: Any] {
+    @objc static var actionButtonTitleAttributes: [NSAttributedString.Key: Any] {
         set {
             defaultActionButtonStyle.titleAttributes = newValue
         }

@@ -57,10 +57,10 @@ class ASTSearchResultsSceneViewController: UIViewController {
     }
 
     func addChild(viewController: UIViewController, toContainer container: UIView) {
-        self.addChildViewController(viewController)
+        self.addChild(viewController)
         container.addSubview(viewController.view)
         viewController.view.translatesAutoresizingMaskIntoConstraints = false
         container.addConstraints(JRConstraintsMakeScaleToFill(viewController.view, container))
-        viewController.didMove(toParentViewController: self)
+        viewController.didMove(toParent: self)
     }
 }

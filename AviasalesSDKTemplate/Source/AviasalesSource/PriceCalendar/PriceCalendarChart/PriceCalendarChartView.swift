@@ -55,26 +55,26 @@ class PriceCalendarChartView: UIView {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: kPriceCalendarChartBarCellId, bundle: nil), forCellWithReuseIdentifier: kPriceCalendarChartBarCellId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kInsetHeaderId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kInsetFooterId)
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kInsetHeaderId)
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: kInsetFooterId)
 
         NotificationCenter.default.addObserver(self, selector: #selector(PriceCalendarChartView.managerEndLoadingNotification(_:)), name: NSNotification.Name(rawValue: JRSDKPriceCalendarLoaderEndLoadingNotification), object: nil)
 
         priceView = PriceCalendarPriceView()
         addSubview(priceView)
         priceView.translatesAutoresizingMaskIntoConstraints = false
-        addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.top, multiplier: 1.0, constant: -9.0))
+        addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: priceView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: -9.0))
         priceView.backgroundColor = UIColor.clear
         priceView?.isHidden = !showPriceView
 
         priceLevelLineView = PriceCalendarPriceLevelView()
         addSubview(priceLevelLineView)
         priceLevelLineView.translatesAutoresizingMaskIntoConstraints = false
-        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutAttribute.left, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.left, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutAttribute.right, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.right, multiplier: 1.0, constant: 0.0))
-        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1.0, constant: JRPixel()))
-        priceLevelVerticalPositionConstraint = NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: collectionView, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: -29.0)
+        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.left, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: self, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 0.0))
+        addConstraint(NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutConstraint.Attribute.height, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nil, attribute: NSLayoutConstraint.Attribute.notAnAttribute, multiplier: 1.0, constant: JRPixel()))
+        priceLevelVerticalPositionConstraint = NSLayoutConstraint(item: priceLevelLineView, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: collectionView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: -29.0)
         addConstraint(priceLevelVerticalPositionConstraint)
     }
 
@@ -119,7 +119,7 @@ class PriceCalendarChartView: UIView {
 
     fileprivate func scrollToDeparture(_ departure: JRSDKPriceCalendarDeparture, animated: Bool = true, completion: (() -> Void)? = nil) {
         if let index = departures.index(of: departure) {
-            collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionViewScrollPosition.centeredHorizontally, animated: animated)
+            collectionView.scrollToItem(at: IndexPath(item: index, section: 0), at: UICollectionView.ScrollPosition.centeredHorizontally, animated: animated)
         }
 
         //wait for scrolling
@@ -130,7 +130,7 @@ class PriceCalendarChartView: UIView {
 
     fileprivate func selectDeparture(_ departure: JRSDKPriceCalendarDeparture, makeVisible: Bool = false) {
         if let index = departures.index(of: departure) {
-            collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: makeVisible ? .centeredHorizontally : UICollectionViewScrollPosition())
+            collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: makeVisible ? .centeredHorizontally : UICollectionView.ScrollPosition())
             defineCenterCell()
             priceView.setPriceCalendarDeparture(departure)
         }
@@ -145,8 +145,8 @@ class PriceCalendarChartView: UIView {
             if monthText != monthLabel.text {
                 let animation = CATransition()
                 animation.duration = 0.5
-                animation.type = kCATransitionFade
-                animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                animation.type = CATransitionType.fade
+                animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
                 monthLabel.layer.add(animation, forKey: "changeTextTransition")
 
                 monthLabel.text = monthText
@@ -185,7 +185,7 @@ class PriceCalendarChartView: UIView {
         guard selectOnScroll else {
             return
         }
-        collectionView.selectItem(at: IndexPath(item: currentCenterCellRow, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition())
+        collectionView.selectItem(at: IndexPath(item: currentCenterCellRow, section: 0), animated: false, scrollPosition: UICollectionView.ScrollPosition())
         if currentCenterCellRow < departures.count {
             let departure = departures[currentCenterCellRow]
             if let selectedDeparture = PriceCalendarManager.shared.loader?.selectedDeparture, selectedDeparture.date() != departure.date() {
@@ -248,10 +248,10 @@ extension PriceCalendarChartView: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
-            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kInsetHeaderId, for: indexPath) as UICollectionReusableView
+        if kind == UICollectionView.elementKindSectionHeader {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kInsetHeaderId, for: indexPath) as UICollectionReusableView
         } else {
-            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: kInsetFooterId, for: indexPath) as UICollectionReusableView
+            return collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: kInsetFooterId, for: indexPath) as UICollectionReusableView
         }
     }
 }

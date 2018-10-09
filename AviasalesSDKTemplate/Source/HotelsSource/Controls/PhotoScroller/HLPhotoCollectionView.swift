@@ -3,8 +3,8 @@ import UIKit
 
 @objc protocol HLPhotoCollectionViewDelegate: NSObjectProtocol {
     @objc optional func photoCollectionViewDidSelectPhotoAtIndex(_ index: Int)
-    @objc optional func photoCollectionViewImageContentMode() -> UIViewContentMode
-    @objc optional func photoCollectionViewPlacegolderContentMode() -> UIViewContentMode
+    @objc optional func photoCollectionViewImageContentMode() -> UIView.ContentMode
+    @objc optional func photoCollectionViewPlacegolderContentMode() -> UIView.ContentMode
 }
 
 @objcMembers
@@ -59,7 +59,7 @@ class HLPhotoCollectionView: UIView {
 
     func initialize() {
         self.backgroundColor = UIColor.black
-        self.layer.contentsGravity = kCAGravityCenter
+        self.layer.contentsGravity = CALayerContentsGravity.center
         self.layer.masksToBounds = true
 
         self.cellSize = self.calculateCellSize()

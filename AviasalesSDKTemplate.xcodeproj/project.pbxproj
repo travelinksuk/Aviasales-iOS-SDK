@@ -16,6 +16,7 @@
 		072714E01D7980F400545E63 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072714DF1D7980F400545E63 /* SystemConfiguration.framework */; };
 		3209ED1D20BC188700E171DE /* JRSDKPrice+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209ED1C20BC188700E171DE /* JRSDKPrice+Format.swift */; };
 		320A0BEC1FBF2A7600DEF6AD /* JRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 320A0BEB1FBF2A7600DEF6AD /* JRAppDelegate.m */; };
+		32102808211D9FEA00046275 /* FlightsTicketEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32102807211D9FEA00046275 /* FlightsTicketEvent.swift */; };
 		321210C320654AC7006BE460 /* JRResultsFlightSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 321210B120654AC6006BE460 /* JRResultsFlightSegmentCell.m */; };
 		321210C520654AC7006BE460 /* JRResultsFlightSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321210B320654AC6006BE460 /* JRResultsFlightSegmentCell.xib */; };
 		321210C720654AC7006BE460 /* SearchResultsPriceCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321210B520654AC6006BE460 /* SearchResultsPriceCalendarView.swift */; };
@@ -48,7 +49,9 @@
 		3217F8AE20AC853D007D3890 /* JRFilterListHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3217F88720AC853D007D3890 /* JRFilterListHeaderCell.xib */; };
 		3217F8B020AC853D007D3890 /* JRFilterTravelSegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3217F88920AC853D007D3890 /* JRFilterTravelSegmentCell.xib */; };
 		3217F8B220AC853D007D3890 /* JRFilterTravelSegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3217F88B20AC853D007D3890 /* JRFilterTravelSegmentCell.m */; };
+		3218192121418BEC00F0D398 /* HLSearchInfoType+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3218192021418BEC00F0D398 /* HLSearchInfoType+Description.swift */; };
 		321849EB1FC5E1BF001CCE92 /* AVSLaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 321849EA1FC5E1BF001CCE92 /* AVSLaunchScreen.xib */; };
+		321AD07C21413F3C00EABD50 /* HotelsSearchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321AD07B21413F3C00EABD50 /* HotelsSearchEvent.swift */; };
 		32245A3A1E76AEF1008FF7EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 32245A381E76AEF1008FF7EF /* main.m */; };
 		322959C71FE18390006B25C0 /* JRDatePickerStateObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 322959B31FE18390006B25C0 /* JRDatePickerStateObject.m */; };
 		322959C91FE18390006B25C0 /* JRDatePickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322959B51FE18390006B25C0 /* JRDatePickerVC.xib */; };
@@ -625,7 +628,6 @@
 		3249A3391FC5DF0F005EEA03 /* HLBadgeIconView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32499DDC1FC5DF0C005EEA03 /* HLBadgeIconView.xib */; };
 		3249A33B1FC5DF0F005EEA03 /* HLBadgeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32499DDD1FC5DF0C005EEA03 /* HLBadgeParser.m */; };
 		3249A33D1FC5DF0F005EEA03 /* HLGroupedTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32499DDF1FC5DF0C005EEA03 /* HLGroupedTableHeaderView.swift */; };
-		3249A33F1FC5DF0F005EEA03 /* ASTSearchResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32499DE01FC5DF0C005EEA03 /* ASTSearchResultsVC.swift */; };
 		3249A3411FC5DF0F005EEA03 /* HLGroupedTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32499DE11FC5DF0C005EEA03 /* HLGroupedTableCell.xib */; };
 		3249A3431FC5DF0F005EEA03 /* HLGroupedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32499DE21FC5DF0C005EEA03 /* HLGroupedTableCell.swift */; };
 		3249A3451FC5DF0F005EEA03 /* ASTBaseSearchTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32499DE31FC5DF0C005EEA03 /* ASTBaseSearchTableVC.swift */; };
@@ -677,6 +679,8 @@
 		3249A3C71FC5DF0F005EEA03 /* NSArray+HLContentComparison.m in Sources */ = {isa = PBXBuildFile; fileRef = 32499E5F1FC5DF0D005EEA03 /* NSArray+HLContentComparison.m */; };
 		3249A3C91FC5DF0F005EEA03 /* UIImage+JRUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 32499E621FC5DF0D005EEA03 /* UIImage+JRUIImage.m */; };
 		3249A3CB1FC5DF0F005EEA03 /* NSLayoutConstraint+JRConstraintMake.m in Sources */ = {isa = PBXBuildFile; fileRef = 32499E661FC5DF0D005EEA03 /* NSLayoutConstraint+JRConstraintMake.m */; };
+		324A7702211C43CC00C241CD /* NSError+ASCustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A7701211C43CC00C241CD /* NSError+ASCustomError.swift */; };
+		3255D79E213D68AF0068C293 /* FlightsBuyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3255D79D213D68AF0068C293 /* FlightsBuyEvent.swift */; };
 		325AB02920626ED1008AB6BE /* JRInfoPanelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325AB01920626ED1008AB6BE /* JRInfoPanelView.xib */; };
 		325AB02B20626ED1008AB6BE /* JRInfoPanelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325AB01A20626ED1008AB6BE /* JRInfoPanelView.m */; };
 		325AB02D20626ED1008AB6BE /* JRTransferCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 325AB01E20626ED1008AB6BE /* JRTransferCell.xib */; };
@@ -687,7 +691,12 @@
 		325AB03720626ED1008AB6BE /* JRFlightsSegmentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 325AB02820626ED1008AB6BE /* JRFlightsSegmentHeaderView.m */; };
 		3265131C20C045CD004B133C /* NSString+Digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265131B20C045CD004B133C /* NSString+Digits.swift */; };
 		326703F41FC70F10003DB047 /* AppIcon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 326703F31FC70F10003DB047 /* AppIcon.xcassets */; };
+		32740F1C211B248B0016A0D6 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32740F1B211B248A0016A0D6 /* AnalyticsManager.swift */; };
+		32740F1F211B25610016A0D6 /* FirebaseAnalyticsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32740F1E211B25610016A0D6 /* FirebaseAnalyticsEngine.swift */; };
+		32740F26211B29F20016A0D6 /* FlightsSearchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32740F25211B29F10016A0D6 /* FlightsSearchEvent.swift */; };
 		3280AF60206CEF85002EEA96 /* BrowserViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3280AF5F206CEF85002EEA96 /* BrowserViewPresenter.swift */; };
+		328457AC214287F800E29887 /* HotelsVariantEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328457AB214287F800E29887 /* HotelsVariantEvent.swift */; };
+		328457AF2142D2FE00E29887 /* HotelsBuyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328457AE2142D2FE00E29887 /* HotelsBuyEvent.swift */; };
 		3287A5F82059BC2100A9BF8B /* PriceCalendarPriceLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3287A5DE2059BC2100A9BF8B /* PriceCalendarPriceLevelView.swift */; };
 		3287A5FA2059BC2100A9BF8B /* PriceCalendarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3287A5DF2059BC2100A9BF8B /* PriceCalendarChartView.swift */; };
 		3287A5FC2059BC2100A9BF8B /* PriceCalendarChartBarCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3287A5E02059BC2100A9BF8B /* PriceCalendarChartBarCell.xib */; };
@@ -712,6 +721,9 @@
 		3287A6252059BC5C00A9BF8B /* ActionCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3287A6222059BC5C00A9BF8B /* ActionCardView.xib */; };
 		328BA9651FC460C00026EA31 /* default_config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 328BA9641FC460C00026EA31 /* default_config.plist */; };
 		328DA65A2069079E00180732 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = 328DA6582069079E00180732 /* UIColor+Hex.m */; };
+		32936C5A213ED14C00516F09 /* JRSDKSearchInfo+Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32936C59213ED14C00516F09 /* JRSDKSearchInfo+Type.swift */; };
+		32936C5D213EDDC900516F09 /* NSNumber+Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32936C5C213EDDC900516F09 /* NSNumber+Timestamp.swift */; };
+		32A1D967215561C700F70F8F /* NSError+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A1D966215561C700F70F8F /* NSError+Error.swift */; };
 		32A2BF4B20247C6900B9EC1B /* DateFormatter+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A2BF4A20247C6900B9EC1B /* DateFormatter+Format.swift */; };
 		32C5F079203ECDB300DE4AFD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C5F078203ECDB000DE4AFD /* LoadingView.swift */; };
 		32C5F07C203ECDC100DE4AFD /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32C5F07B203ECDC100DE4AFD /* LoadingView.xib */; };
@@ -754,6 +766,7 @@
 		3209ED1C20BC188700E171DE /* JRSDKPrice+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JRSDKPrice+Format.swift"; sourceTree = "<group>"; };
 		320A0BEA1FBF2A7500DEF6AD /* JRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRAppDelegate.h; sourceTree = "<group>"; };
 		320A0BEB1FBF2A7600DEF6AD /* JRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRAppDelegate.m; sourceTree = "<group>"; };
+		32102807211D9FEA00046275 /* FlightsTicketEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsTicketEvent.swift; sourceTree = "<group>"; };
 		321210B120654AC6006BE460 /* JRResultsFlightSegmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRResultsFlightSegmentCell.m; sourceTree = "<group>"; };
 		321210B220654AC6006BE460 /* JRResultsFlightSegmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRResultsFlightSegmentCell.h; sourceTree = "<group>"; };
 		321210B320654AC6006BE460 /* JRResultsFlightSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRResultsFlightSegmentCell.xib; sourceTree = "<group>"; };
@@ -806,7 +819,9 @@
 		3217F88920AC853D007D3890 /* JRFilterTravelSegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRFilterTravelSegmentCell.xib; sourceTree = "<group>"; };
 		3217F88A20AC853D007D3890 /* JRFilterTravelSegmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRFilterTravelSegmentCell.h; sourceTree = "<group>"; };
 		3217F88B20AC853D007D3890 /* JRFilterTravelSegmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFilterTravelSegmentCell.m; sourceTree = "<group>"; };
+		3218192021418BEC00F0D398 /* HLSearchInfoType+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HLSearchInfoType+Description.swift"; sourceTree = "<group>"; };
 		321849EA1FC5E1BF001CCE92 /* AVSLaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AVSLaunchScreen.xib; sourceTree = "<group>"; };
+		321AD07B21413F3C00EABD50 /* HotelsSearchEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsSearchEvent.swift; sourceTree = "<group>"; };
 		32245A371E76AEF1008FF7EF /* AviasalesSDKTemplate-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AviasalesSDKTemplate-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		32245A381E76AEF1008FF7EF /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		322959B31FE18390006B25C0 /* JRDatePickerStateObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRDatePickerStateObject.m; sourceTree = "<group>"; };
@@ -1587,7 +1602,6 @@
 		32499DDC1FC5DF0C005EEA03 /* HLBadgeIconView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLBadgeIconView.xib; sourceTree = "<group>"; };
 		32499DDD1FC5DF0C005EEA03 /* HLBadgeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HLBadgeParser.m; sourceTree = "<group>"; };
 		32499DDF1FC5DF0C005EEA03 /* HLGroupedTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLGroupedTableHeaderView.swift; sourceTree = "<group>"; };
-		32499DE01FC5DF0C005EEA03 /* ASTSearchResultsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTSearchResultsVC.swift; sourceTree = "<group>"; };
 		32499DE11FC5DF0C005EEA03 /* HLGroupedTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HLGroupedTableCell.xib; sourceTree = "<group>"; };
 		32499DE21FC5DF0C005EEA03 /* HLGroupedTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLGroupedTableCell.swift; sourceTree = "<group>"; };
 		32499DE31FC5DF0C005EEA03 /* ASTBaseSearchTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTBaseSearchTableVC.swift; sourceTree = "<group>"; };
@@ -1661,6 +1675,8 @@
 		32499E631FC5DF0D005EEA03 /* UIImage+JRUIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JRUIImage.h"; sourceTree = "<group>"; };
 		32499E651FC5DF0D005EEA03 /* NSLayoutConstraint+JRConstraintMake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+JRConstraintMake.h"; sourceTree = "<group>"; };
 		32499E661FC5DF0D005EEA03 /* NSLayoutConstraint+JRConstraintMake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+JRConstraintMake.m"; sourceTree = "<group>"; };
+		324A7701211C43CC00C241CD /* NSError+ASCustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+ASCustomError.swift"; sourceTree = "<group>"; };
+		3255D79D213D68AF0068C293 /* FlightsBuyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsBuyEvent.swift; sourceTree = "<group>"; };
 		325AB01920626ED1008AB6BE /* JRInfoPanelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRInfoPanelView.xib; sourceTree = "<group>"; };
 		325AB01A20626ED1008AB6BE /* JRInfoPanelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRInfoPanelView.m; sourceTree = "<group>"; };
 		325AB01B20626ED1008AB6BE /* JRInfoPanelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRInfoPanelView.h; sourceTree = "<group>"; };
@@ -1676,7 +1692,12 @@
 		325AB02820626ED1008AB6BE /* JRFlightsSegmentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRFlightsSegmentHeaderView.m; sourceTree = "<group>"; };
 		3265131B20C045CD004B133C /* NSString+Digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSString+Digits.swift"; sourceTree = "<group>"; };
 		326703F31FC70F10003DB047 /* AppIcon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcon.xcassets; sourceTree = "<group>"; };
+		32740F1B211B248A0016A0D6 /* AnalyticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		32740F1E211B25610016A0D6 /* FirebaseAnalyticsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsEngine.swift; sourceTree = "<group>"; };
+		32740F25211B29F10016A0D6 /* FlightsSearchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightsSearchEvent.swift; sourceTree = "<group>"; };
 		3280AF5F206CEF85002EEA96 /* BrowserViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewPresenter.swift; sourceTree = "<group>"; };
+		328457AB214287F800E29887 /* HotelsVariantEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsVariantEvent.swift; sourceTree = "<group>"; };
+		328457AE2142D2FE00E29887 /* HotelsBuyEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelsBuyEvent.swift; sourceTree = "<group>"; };
 		3287A5DE2059BC2100A9BF8B /* PriceCalendarPriceLevelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCalendarPriceLevelView.swift; sourceTree = "<group>"; };
 		3287A5DF2059BC2100A9BF8B /* PriceCalendarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceCalendarChartView.swift; sourceTree = "<group>"; };
 		3287A5E02059BC2100A9BF8B /* PriceCalendarChartBarCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PriceCalendarChartBarCell.xib; sourceTree = "<group>"; };
@@ -1702,7 +1723,10 @@
 		328BA9641FC460C00026EA31 /* default_config.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_config.plist; sourceTree = "<group>"; };
 		328DA6582069079E00180732 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		328DA6592069079E00180732 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		32936C59213ED14C00516F09 /* JRSDKSearchInfo+Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JRSDKSearchInfo+Type.swift"; sourceTree = "<group>"; };
+		32936C5C213EDDC900516F09 /* NSNumber+Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSNumber+Timestamp.swift"; sourceTree = "<group>"; };
 		329A5A141E76B18D008A7EA2 /* AviasalesSDKTemplate-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "AviasalesSDKTemplate-Info.plist"; sourceTree = SOURCE_ROOT; };
+		32A1D966215561C700F70F8F /* NSError+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSError+Error.swift"; sourceTree = "<group>"; };
 		32A2BF4A20247C6900B9EC1B /* DateFormatter+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Format.swift"; sourceTree = "<group>"; };
 		32C5F078203ECDB000DE4AFD /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		32C5F07B203ECDC100DE4AFD /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
@@ -1786,8 +1810,8 @@
 		321210B020654AC6006BE460 /* JRResultsFlightSegmentCell */ = {
 			isa = PBXGroup;
 			children = (
-				321210B120654AC6006BE460 /* JRResultsFlightSegmentCell.m */,
 				321210B220654AC6006BE460 /* JRResultsFlightSegmentCell.h */,
+				321210B120654AC6006BE460 /* JRResultsFlightSegmentCell.m */,
 				321210B320654AC6006BE460 /* JRResultsFlightSegmentCell.xib */,
 			);
 			path = JRResultsFlightSegmentCell;
@@ -1979,6 +2003,17 @@
 			path = JRFilterTravelSegmentCell;
 			sourceTree = "<group>";
 		};
+		32246838214024EC0001BFD4 /* Hotels */ = {
+			isa = PBXGroup;
+			children = (
+				321AD07B21413F3C00EABD50 /* HotelsSearchEvent.swift */,
+				328457AB214287F800E29887 /* HotelsVariantEvent.swift */,
+				328457AE2142D2FE00E29887 /* HotelsBuyEvent.swift */,
+			);
+			name = Hotels;
+			path = Flights/Hotels;
+			sourceTree = "<group>";
+		};
 		322959B21FE18390006B25C0 /* JRDatePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -2149,6 +2184,7 @@
 				32499A681FC5DF0C005EEA03 /* ConfigManagment */,
 				32499A5C1FC5DF0C005EEA03 /* ColorManagment */,
 				32499E0C1FC5DF0C005EEA03 /* Advertisement */,
+				32740F1A211B248A0016A0D6 /* Analytics */,
 				32499A6C1FC5DF0C005EEA03 /* CommonSource */,
 				32499AA51FC5DF0C005EEA03 /* AviasalesSource */,
 				32499B7C1FC5DF0C005EEA03 /* HotelsSource */,
@@ -3415,6 +3451,7 @@
 				32499CC71FC5DF0C005EEA03 /* HLParseUtils.m */,
 				32499CC81FC5DF0C005EEA03 /* HLLocaleInspector.m */,
 				32499CC91FC5DF0C005EEA03 /* MailSender */,
+				324A7701211C43CC00C241CD /* NSError+ASCustomError.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -3888,7 +3925,6 @@
 			isa = PBXGroup;
 			children = (
 				32499DDF1FC5DF0C005EEA03 /* HLGroupedTableHeaderView.swift */,
-				32499DE01FC5DF0C005EEA03 /* ASTSearchResultsVC.swift */,
 				32499DE11FC5DF0C005EEA03 /* HLGroupedTableCell.xib */,
 				32499DE21FC5DF0C005EEA03 /* HLGroupedTableCell.swift */,
 				32499DE31FC5DF0C005EEA03 /* ASTBaseSearchTableVC.swift */,
@@ -3935,6 +3971,10 @@
 				3209ED1C20BC188700E171DE /* JRSDKPrice+Format.swift */,
 				3265131B20C045CD004B133C /* NSString+Digits.swift */,
 				32F705A420BD67B900CC4226 /* JRSDKPrice+Build.swift */,
+				32936C59213ED14C00516F09 /* JRSDKSearchInfo+Type.swift */,
+				32936C5C213EDDC900516F09 /* NSNumber+Timestamp.swift */,
+				3218192021418BEC00F0D398 /* HLSearchInfoType+Description.swift */,
+				32A1D966215561C700F70F8F /* NSError+Error.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -4186,6 +4226,27 @@
 				325AB02720626ED1008AB6BE /* JRFlightsSegmentHeaderView.xib */,
 			);
 			path = JRFlightsSegmentHeaderView;
+			sourceTree = "<group>";
+		};
+		32740F1A211B248A0016A0D6 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				32740F1B211B248A0016A0D6 /* AnalyticsManager.swift */,
+				32740F1E211B25610016A0D6 /* FirebaseAnalyticsEngine.swift */,
+				32740F24211B29F10016A0D6 /* Flights */,
+				32246838214024EC0001BFD4 /* Hotels */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		32740F24211B29F10016A0D6 /* Flights */ = {
+			isa = PBXGroup;
+			children = (
+				32740F25211B29F10016A0D6 /* FlightsSearchEvent.swift */,
+				32102807211D9FEA00046275 /* FlightsTicketEvent.swift */,
+				3255D79D213D68AF0068C293 /* FlightsBuyEvent.swift */,
+			);
+			path = Flights;
 			sourceTree = "<group>";
 		};
 		3287A5DC2059BC2100A9BF8B /* PriceCalendar */ = {
@@ -4452,10 +4513,9 @@
 				C60EC83317E848DA00C5D52E /* Sources */,
 				C60EC83417E848DA00C5D52E /* Frameworks */,
 				C60EC83517E848DA00C5D52E /* Resources */,
-				C668CE5D1F0559F600E80A60 /* Fabric Script */,
 				E4ABF22AB848A6C1FCF88809 /* [CP] Embed Pods Frameworks */,
 				6FE12E2A3031362B62AD9DCE /* [CP] Copy Pods Resources */,
-				9FC7BD251EDC76590034D7DB /* Swiftlint */,
+				32C5D9BA2147FCA6001E4821 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -4474,12 +4534,12 @@
 			attributes = {
 				CLASSPREFIX = "";
 				LastSwiftUpdateCheck = 0910;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Go Travel Un Limited";
 				TargetAttributes = {
 					C60EC83617E848DA00C5D52E = {
 						DevelopmentTeam = C92M3ZV55X;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
@@ -4724,6 +4784,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		32C5D9BA2147FCA6001E4821 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 		6FE12E2A3031362B62AD9DCE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4804,34 +4878,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9FC7BD251EDC76590034D7DB /* Swiftlint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Swiftlint;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint";
-		};
-		C668CE5D1F0559F600E80A60 /* Fabric Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Fabric Script";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "sh fabric.sh";
-		};
 		E4ABF22AB848A6C1FCF88809 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -4843,16 +4889,17 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AutoCoding/AutoCoding.framework",
 				"${BUILT_PRODUCTS_DIR}/BZipCompression/BZipCompression.framework",
-				"${PODS_ROOT}/HotellookSDK/Library/HotellookSDK.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HotellookSDK/HotellookSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/NMRangeSlider/NMRangeSlider.framework",
-				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PureLayout/PureLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Smartling.i18n/Smartling_i18n.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftProtobuf/SwiftProtobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/libextobjc/libextobjc.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -4860,16 +4907,17 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoCoding.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BZipCompression.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HotellookSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMRangeSlider.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PureLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Smartling_i18n.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftProtobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libextobjc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4904,6 +4952,7 @@
 				3249A29F1FC5DF0E005EEA03 /* HLAlertsFabric.m in Sources */,
 				3249A1AF1FC5DF0E005EEA03 /* HLHotelDetailPhotosTabCell.swift in Sources */,
 				3249A09D1FC5DF0D005EEA03 /* HLRatingBadge.swift in Sources */,
+				32740F1F211B25610016A0D6 /* FirebaseAnalyticsEngine.swift in Sources */,
 				320A0BEC1FBF2A7600DEF6AD /* JRAppDelegate.m in Sources */,
 				3249A0811FC5DF0D005EEA03 /* MapPeekVC.swift in Sources */,
 				32499FDB1FC5DF0D005EEA03 /* HLScrollView.swift in Sources */,
@@ -4931,7 +4980,6 @@
 				3249A02D1FC5DF0D005EEA03 /* Filter.swift in Sources */,
 				32499FE51FC5DF0D005EEA03 /* HLIphoneFiltersVC.swift in Sources */,
 				3217F89A20AC853D007D3890 /* JRFilterCellsFactory.m in Sources */,
-				3249A33F1FC5DF0F005EEA03 /* ASTSearchResultsVC.swift in Sources */,
 				3249A2B71FC5DF0E005EEA03 /* HLPhotoCollectionView.swift in Sources */,
 				3249A28D1FC5DF0E005EEA03 /* ErrorItem.swift in Sources */,
 				32499EAB1FC5DF0D005EEA03 /* CurrencyCell.swift in Sources */,
@@ -4943,6 +4991,7 @@
 				32499EB71FC5DF0D005EEA03 /* InfoScreenCellModelProtocol.swift in Sources */,
 				3249A14D1FC5DF0E005EEA03 /* JRAirportPickerCellWithInfo.m in Sources */,
 				32499FF91FC5DF0D005EEA03 /* CancelableFilterItem.swift in Sources */,
+				324A7702211C43CC00C241CD /* NSError+ASCustomError.swift in Sources */,
 				3249A2BD1FC5DF0E005EEA03 /* GateLogoView.swift in Sources */,
 				3249A2151FC5DF0E005EEA03 /* DiscountCell.swift in Sources */,
 				3249A3A71FC5DF0F005EEA03 /* UINavigationController+Additions.m in Sources */,
@@ -4950,6 +4999,7 @@
 				3249A2E71FC5DF0E005EEA03 /* RatingView.swift in Sources */,
 				3249A05D1FC5DF0D005EEA03 /* HLHotelsManager.m in Sources */,
 				32499F7D1FC5DF0D005EEA03 /* JRFilterTicketBounds.m in Sources */,
+				328457AC214287F800E29887 /* HotelsVariantEvent.swift in Sources */,
 				32499F4F1FC5DF0D005EEA03 /* ASTPassengersPickerViewController.swift in Sources */,
 				32499E951FC5DF0D005EEA03 /* CustomColorScheme.swift in Sources */,
 				3249A3B51FC5DF0F005EEA03 /* MKMapView+Refresh.m in Sources */,
@@ -4973,6 +5023,7 @@
 				3249A24D1FC5DF0E005EEA03 /* HotelDetailsMoreVC.swift in Sources */,
 				3249A0931FC5DF0D005EEA03 /* ImportantPointsPeekVC.swift in Sources */,
 				3249A0C91FC5DF0E005EEA03 /* HotellookSortItemsFactory.swift in Sources */,
+				32740F1C211B248B0016A0D6 /* AnalyticsManager.swift in Sources */,
 				3249A39F1FC5DF0F005EEA03 /* UIViewController+UIScrollView.m in Sources */,
 				3249A2CF1FC5DF0E005EEA03 /* PopoverItemPickerCell.swift in Sources */,
 				32499F311FC5DF0D005EEA03 /* ASTSimpleSearchFormAirportTableViewCell.m in Sources */,
@@ -4984,6 +5035,7 @@
 				32499FE91FC5DF0D005EEA03 /* HLFilteringOperation.m in Sources */,
 				3249A25F1FC5DF0E005EEA03 /* HotelDetailsNavBarView.swift in Sources */,
 				3249A1031FC5DF0E005EEA03 /* HLRatingCardCell.m in Sources */,
+				3218192121418BEC00F0D398 /* HLSearchInfoType+Description.swift in Sources */,
 				3249A05F1FC5DF0D005EEA03 /* BaseSection.swift in Sources */,
 				3249A16D1FC5DF0E005EEA03 /* HLSearchForm.swift in Sources */,
 				3249A12D1FC5DF0E005EEA03 /* HLVariantScrollablePhotoCell.m in Sources */,
@@ -4995,6 +5047,7 @@
 				32499F1B1FC5DF0D005EEA03 /* ASTSimpleSearchFormViewModel.m in Sources */,
 				3249A2551FC5DF0E005EEA03 /* HLHotelDetailsCellFactory.swift in Sources */,
 				3249A3CB1FC5DF0F005EEA03 /* NSLayoutConstraint+JRConstraintMake.m in Sources */,
+				32740F26211B29F20016A0D6 /* FlightsSearchEvent.swift in Sources */,
 				3249A0891FC5DF0D005EEA03 /* PeekItems.swift in Sources */,
 				3249A2F31FC5DF0E005EEA03 /* HLPoiIconSelector.m in Sources */,
 				3249A0C71FC5DF0E005EEA03 /* ApartmentsSortItemsFactory.swift in Sources */,
@@ -5025,6 +5078,7 @@
 				32F705A520BD67B900CC4226 /* JRSDKPrice+Build.swift in Sources */,
 				3249A0331FC5DF0D005EEA03 /* FilterLogic.swift in Sources */,
 				3249A0911FC5DF0D005EEA03 /* PhotoPeekVC.swift in Sources */,
+				328457AF2142D2FE00E29887 /* HotelsBuyEvent.swift in Sources */,
 				3249A1431FC5DF0E005EEA03 /* HLPhotoManager+Additions.swift in Sources */,
 				32499E991FC5DF0D005EEA03 /* Config.swift in Sources */,
 				3249A3BB1FC5DF0F005EEA03 /* CAAnimation+JRPopup.m in Sources */,
@@ -5096,6 +5150,7 @@
 				3249A3051FC5DF0F005EEA03 /* HLMapRegionCalculator.m in Sources */,
 				3249A2451FC5DF0E005EEA03 /* HLIphoneHotelDetailsVC.swift in Sources */,
 				3249A3491FC5DF0F005EEA03 /* GroupedTableItem.swift in Sources */,
+				32936C5A213ED14C00516F09 /* JRSDKSearchInfo+Type.swift in Sources */,
 				3249A0EB1FC5DF0E005EEA03 /* HLPlaceholderView.m in Sources */,
 				3249A2751FC5DF0E005EEA03 /* ReviewItem.swift in Sources */,
 				3249A0291FC5DF0D005EEA03 /* MultiAmenityFilterCell.swift in Sources */,
@@ -5121,6 +5176,7 @@
 				32499FD51FC5DF0D005EEA03 /* HLFilter.m in Sources */,
 				3217F89020AC853D007D3890 /* JRFilterItemsFactory.m in Sources */,
 				3249A01F1FC5DF0D005EEA03 /* HLDistanceFilterCell.swift in Sources */,
+				3255D79E213D68AF0068C293 /* FlightsBuyEvent.swift in Sources */,
 				32499F571FC5DF0D005EEA03 /* ASTPassengersPickerTableViewCell.swift in Sources */,
 				32C5F079203ECDB300DE4AFD /* LoadingView.swift in Sources */,
 				3249A0611FC5DF0D005EEA03 /* Section.swift in Sources */,
@@ -5137,6 +5193,7 @@
 				3249A0951FC5DF0D005EEA03 /* HDKDefaultsSaver+Hotellook.m in Sources */,
 				3249A1751FC5DF0E005EEA03 /* HotelPropertyTypeUtils.swift in Sources */,
 				32499F331FC5DF0D005EEA03 /* ASTComplexSearchFormTableViewCell.m in Sources */,
+				321AD07C21413F3C00EABD50 /* HotelsSearchEvent.swift in Sources */,
 				3287A6162059BC2100A9BF8B /* PriceCalendarAverageCell.swift in Sources */,
 				32460B4B2035C79600F937F1 /* StringUtils.m in Sources */,
 				32499FFD1FC5DF0D005EEA03 /* FilterMultiAmenitiesItem.swift in Sources */,
@@ -5261,6 +5318,7 @@
 				32460B572035C79600F937F1 /* JRStringsWidthComputer.m in Sources */,
 				32CA9BD520EB903F0060D0EF /* NSOrderedSetSequence.swift in Sources */,
 				32499EBF1FC5DF0D005EEA03 /* InfoScreenAboutCellModel.swift in Sources */,
+				32A1D967215561C700F70F8F /* NSError+Error.swift in Sources */,
 				3249A2771FC5DF0E005EEA03 /* NamedHotelDetailsItem.swift in Sources */,
 				32499FD91FC5DF0D005EEA03 /* IpadPointSelectionVC.swift in Sources */,
 				32499FDF1FC5DF0D005EEA03 /* HLSliderCalculator.m in Sources */,
@@ -5296,6 +5354,7 @@
 				321210D320654AC7006BE460 /* JRResultsTicketCell.m in Sources */,
 				3249A3231FC5DF0F005EEA03 /* HLAutolayoutCollectionViewCell.m in Sources */,
 				32C61D8B2059BE1D00CF4AEC /* SearchResultsCardItem.swift in Sources */,
+				32102808211D9FEA00046275 /* FlightsTicketEvent.swift in Sources */,
 				3249A2AB1FC5DF0E005EEA03 /* HLScrollableSegmentedControl.swift in Sources */,
 				3249A3071FC5DF0F005EEA03 /* HLLocateMeMapView.swift in Sources */,
 				3287A5FE2059BC2100A9BF8B /* PriceCalendarChartBarCell.swift in Sources */,
@@ -5321,6 +5380,7 @@
 				32499F471FC5DF0D005EEA03 /* ASTSimpleSearchFormSeparatorView.m in Sources */,
 				3249A1911FC5DF0E005EEA03 /* HLGate+Hotellook.swift in Sources */,
 				32499EE51FC5DF0D005EEA03 /* ASTWaitingScreenPresenter.swift in Sources */,
+				32936C5D213EDDC900516F09 /* NSNumber+Timestamp.swift in Sources */,
 				3249A0371FC5DF0D005EEA03 /* CustomFilterViewTableItem.swift in Sources */,
 				3217F8B220AC853D007D3890 /* JRFilterTravelSegmentCell.m in Sources */,
 				3249A06B1FC5DF0D005EEA03 /* PeekHotelMapCell.swift in Sources */,
@@ -5571,8 +5631,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -5620,6 +5680,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -5630,8 +5691,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
@@ -5661,7 +5722,7 @@
 				SKIP_INSTALL = YES;
 				STRIP_STYLE = all;
 				SWIFT_OBJC_BRIDGING_HEADER = "AviasalesSDKTemplate/AviasalesSDKTemplate-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -5673,8 +5734,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
@@ -5701,7 +5762,7 @@
 				SKIP_INSTALL = NO;
 				STRIP_STYLE = all;
 				SWIFT_OBJC_BRIDGING_HEADER = "AviasalesSDKTemplate/AviasalesSDKTemplate-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -5751,6 +5812,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release AppStore";
@@ -5761,8 +5823,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
@@ -5792,7 +5854,7 @@
 				SKIP_INSTALL = NO;
 				STRIP_STYLE = all;
 				SWIFT_OBJC_BRIDGING_HEADER = "AviasalesSDKTemplate/AviasalesSDKTemplate-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

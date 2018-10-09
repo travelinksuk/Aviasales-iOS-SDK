@@ -31,7 +31,7 @@ class HLHotelDetailsBadgesCell: HLHotelDetailsTableCell {
         cell.setNeedsLayout()
         cell.layoutIfNeeded()
 
-        let height = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = cell.contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
 
         return ceil(height)
     }

@@ -275,7 +275,7 @@ extension UIView {
     private func distanceBadgeView(with badge: HLDistanceBadge) -> HLDistanceBadgeView {
         let badgeView = HLDistanceBadgeView.badgeView()
         badgeView.configure(for: badge.distance, pointType: badge.pointType)
-        badgeView.frame.size = badgeView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+        badgeView.frame.size = badgeView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize)
         return badgeView
     }
 

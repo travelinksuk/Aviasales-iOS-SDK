@@ -14,7 +14,6 @@
     case villa = 12
     case room = 13
 
-    // swiftlint:disable:next cyclomatic_complexity
     func localizedValue() -> String? {
         switch self {
             case .unknown: return nil

@@ -78,12 +78,7 @@
 	for (NSDate *day in finalArray) {
 		NSMutableArray *week = weeks[[weekCount stringValue]];
 		if (![weekCount integerValue]) {
-            
-            static NSDateFormatter *formatter;
-            if (formatter == nil) {
-                formatter = [NSDateFormatter new];
-            }
-            
+            NSDateFormatter *formatter = [NSDateFormatter applicationUIDateFormatter];
 			[formatter setDateFormat:@"EE"];
 			[_weekdays addObject:[[formatter stringFromDate:day] capitalizedString]];
 		}

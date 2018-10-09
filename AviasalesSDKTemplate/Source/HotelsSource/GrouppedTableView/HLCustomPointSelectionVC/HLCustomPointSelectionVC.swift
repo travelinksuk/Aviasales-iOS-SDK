@@ -40,7 +40,7 @@ class HLCustomPointSelectionVC: HLCommonVC, MKMapViewDelegate, HLLocateMeMapView
         super.viewDidLayoutSubviews()
 
         if let searchInfoLocation = initialSearchInfoLocation {
-            mapView.region = MKCoordinateRegionMake(searchInfoLocation.coordinate, MKCoordinateSpanMake(spanDegrees, spanDegrees))
+            mapView.region = MKCoordinateRegion.init(center: searchInfoLocation.coordinate, span: MKCoordinateSpan.init(latitudeDelta: spanDegrees, longitudeDelta: spanDegrees))
             initialSearchInfoLocation = nil
         }
     }

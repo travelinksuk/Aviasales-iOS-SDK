@@ -28,8 +28,8 @@ class PriceCalendarPriceView: UIView {
         textLabel.textColor = JRColorScheme.mainColor()
         addSubview(textLabel)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-19-[textLabel]-19-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["textLabel": textLabel]))
-        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-6-[textLabel]-12-|", options: NSLayoutFormatOptions(), metrics: nil, views: ["textLabel": textLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-19-[textLabel]-19-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["textLabel": textLabel]))
+        addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-6-[textLabel]-12-|", options: NSLayoutConstraint.FormatOptions(), metrics: nil, views: ["textLabel": textLabel]))
 
         textLabel.text = noPriceText
 

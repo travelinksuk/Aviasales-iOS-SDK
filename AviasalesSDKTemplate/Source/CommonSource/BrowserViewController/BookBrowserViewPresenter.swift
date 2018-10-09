@@ -10,10 +10,12 @@ class BookBrowserViewPresenter {
 
     fileprivate weak var view: BrowserViewProtocol?
 
+    fileprivate let variant: HLResultVariant
     fileprivate let room: HDKRoom
     fileprivate var request: URLRequest?
 
-    init(room: HDKRoom) {
+    init(variant: HLResultVariant, room: HDKRoom) {
+        self.variant = variant
         self.room = room
     }
 }
@@ -25,6 +27,7 @@ extension BookBrowserViewPresenter: BrowserViewPresenter {
         view.set(title: room.gate.name)
         view.updateControls()
         loadURL()
+        trackHotelsBuyEvent()
     }
 
     func handleClose() {
@@ -50,7 +53,7 @@ extension BookBrowserViewPresenter: BrowserViewPresenter {
         view?.hideLoading()
         view?.hideActivity()
 
-        if !error.isCancelledError {
+        if !error.isCancelled {
             view?.showError(message: error.localizedDescription)
         }
     }
@@ -76,6 +79,14 @@ extension BookBrowserViewPresenter: BrowserViewPresenter {
 
 private extension BookBrowserViewPresenter {
 
+    func trackHotelsBuyEvent() {
+        let event = HotelsBuyEvent(variant: variant, room: room)
+        AnalyticsManager.log(event: event)
+    }
+}
+
+private extension BookBrowserViewPresenter {
+
     func loadURL() {
 
         guard let url = room.deeplink  else {
@@ -86,7 +97,7 @@ private extension BookBrowserViewPresenter {
         view?.showLoading()
 
         ServiceLocator.shared.api.deeplinkInfo(url: url).promise()
-            .then { [weak self] deeplinkInfo in
+            .done { [weak self] deeplinkInfo in
                 self?.deeplinkLoaderSuccess(withUrl: deeplinkInfo.url, scripts: deeplinkInfo.scripts)
             }
             .catch { [weak self] error in

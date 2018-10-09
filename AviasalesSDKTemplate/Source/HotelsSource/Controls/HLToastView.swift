@@ -34,13 +34,13 @@ class HLToastView: UIView {
 
         let constraintWidth = NSLayoutConstraint.constraints(withVisualFormat: "H:[selfView(selfWidth)]", options: .alignAllCenterY, metrics: ["selfWidth": defaultWidth], views: ["selfView": self])
         onView.addConstraints(constraintWidth)
-        let constraintCenterY = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.centerY, relatedBy: .equal, toItem: superview, attribute: .centerY, multiplier: 1, constant: 0)
+        let constraintCenterY = NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: .equal, toItem: superview, attribute: .centerY, multiplier: 1, constant: 0)
         onView.addConstraint(constraintCenterY)
-        let constraintCenterX = NSLayoutConstraint(item: self, attribute: NSLayoutAttribute.centerX, relatedBy: .equal, toItem: superview, attribute: .centerX, multiplier: 1, constant: 0)
+        let constraintCenterX = NSLayoutConstraint(item: self, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: .equal, toItem: superview, attribute: .centerX, multiplier: 1, constant: 0)
         onView.addConstraint(constraintCenterX)
 
         let duration = (animated ? self.defaultShowDuration : 0.0)
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(),
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(),
             animations: { () -> Void in
                 self.alpha = 1.0
             }, completion: { (finished) -> Void in
@@ -59,7 +59,7 @@ class HLToastView: UIView {
 
 		self.animated = true
 
-		let options: UIViewAnimationOptions = UIViewAnimationOptions.beginFromCurrentState
+		let options: UIView.AnimationOptions = UIView.AnimationOptions.beginFromCurrentState
 
         UIView.animate(withDuration: duration, delay: 0.0, options: options,
             animations: { () -> Void in

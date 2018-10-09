@@ -2,11 +2,11 @@ import Foundation
 
 class ReviewsErrorCell: UITableViewCell {
     let label = UILabel()
-    let button = UIButton(type: UIButtonType.system)
+    let button = UIButton(type: UIButton.ButtonType.system)
 
     var buttonHandler: (() -> Void)?
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupSubviews()
         setupConstraints()

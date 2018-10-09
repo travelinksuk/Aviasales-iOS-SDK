@@ -204,7 +204,7 @@ class HLCommonResultsVC: HLCommonVC,
     }
 
     private func addNoResultsPlaceholder() {
-        noSearchResultsView = loadViewFromNibNamed("HLNoSearchResultsPlaceholderView") as! HLPlaceholderView
+        noSearchResultsView = (loadViewFromNibNamed("HLNoSearchResultsPlaceholderView") as! HLPlaceholderView)
         noSearchResultsView.delegate = self
         noSearchResultsView.isHidden = true
         view.addSubview(noSearchResultsView)
@@ -212,7 +212,7 @@ class HLCommonResultsVC: HLCommonVC,
     }
 
     private func addNoFilterResultsPlaceholder() {
-        noFiltersResultView = loadViewFromNibNamed("HLNoFilterResultsPlaceholderView") as! HLPlaceholderView
+        noFiltersResultView = (loadViewFromNibNamed("HLNoFilterResultsPlaceholderView") as! HLPlaceholderView)
         noFiltersResultView.delegate = self
         noFiltersResultView.isHidden = true
         if iPad() {
@@ -344,7 +344,7 @@ class HLCommonResultsVC: HLCommonVC,
 
     func actionCardItemClosed(_ item: HLCollectionItem!) {
         removeItem(item)
-        actionCardsManager.excludeItemClass(item as! HLActionCardItem)
+        actionCardsManager.excludeItemClass((item as! HLActionCardItem))
     }
 
     func distanceItemClosed(_ item: HLDistanceFilterCardItem!) {

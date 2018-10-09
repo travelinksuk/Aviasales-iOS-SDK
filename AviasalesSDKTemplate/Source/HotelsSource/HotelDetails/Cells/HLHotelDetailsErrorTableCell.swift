@@ -24,7 +24,7 @@ class HLHotelDetailsErrorTableCell: UITableViewCell {
 
     var buttonText: String? {
         didSet {
-            self.button.setTitle(self.buttonText, for: UIControlState())
+            self.button.setTitle(self.buttonText, for: UIControl.State())
         }
     }
 

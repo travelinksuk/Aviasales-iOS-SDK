@@ -248,7 +248,7 @@ class WaitingVC: HLCommonVC, HLVariantsManagerDelegate, HLCityInfoLoadingProtoco
             ? HLIpadResultsVC(nibName: "HLIpadResultsVC", bundle: nil)
             : HLIphoneResultsVC(nibName: "HLIphoneResultsVC", bundle: nil)
 
-        resultsVC.searchInfo = searchInfo.copy() as! HLSearchInfo
+        resultsVC.searchInfo = (searchInfo.copy() as! HLSearchInfo)
         resultsVC.setSearchResult(searchResult: searchResult)
 
         if let navController = navigationController {

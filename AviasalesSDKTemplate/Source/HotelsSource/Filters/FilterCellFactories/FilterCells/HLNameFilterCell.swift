@@ -13,13 +13,13 @@ class HLNameFilterCell: HLDividerCell {
             titleLabel.text = NSLS("HL_FILTERS_NAME_TEXTFIELD_PLACEHOLDER")
             titleLabel.textColor = JRColorScheme.darkTextColor()
             titleLabel.alpha = 0.5
-            button.setImage(UIImage(named: "nameFilterLoupe"), for: UIControlState.disabled)
+            button.setImage(UIImage(named: "nameFilterLoupe"), for: UIControl.State.disabled)
             button.isEnabled = false
         } else {
             titleLabel.text = title
             titleLabel.textColor = JRColorScheme.actionColor()
             titleLabel.alpha = 1.0
-            button.setImage(UIImage(named: "nameFilterСross"), for: UIControlState())
+            button.setImage(UIImage(named: "nameFilterСross"), for: UIControl.State())
             button.isEnabled = true
         }
     }

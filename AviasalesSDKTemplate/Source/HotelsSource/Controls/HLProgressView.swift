@@ -125,7 +125,7 @@ class HLProgressView: UIView, CAAnimationDelegate {
         backgroundLayer.lineWidth = borderLineWidth
         backgroundLayer.strokeStart = 0.0
         backgroundLayer.strokeEnd = 1.0
-        backgroundLayer.lineCap = kCALineCapRound
+        backgroundLayer.lineCap = CAShapeLayerLineCap.round
         backgroundLayer.rasterizationScale = layerContentsScale
         backgroundLayer.contentsScale = UIScreen.main.scale
         layer.addSublayer(backgroundLayer)
@@ -144,7 +144,7 @@ class HLProgressView: UIView, CAAnimationDelegate {
         progressLayer.lineWidth = progressLineWidth
         progressLayer.strokeStart = 0.0
         progressLayer.strokeEnd = 0.0
-        progressLayer.lineCap = kCALineCapRound
+        progressLayer.lineCap = CAShapeLayerLineCap.round
         progressLayer.rasterizationScale = layerContentsScale
         progressLayer.contentsScale = UIScreen.main.scale
         progressLayer.isOpaque = false

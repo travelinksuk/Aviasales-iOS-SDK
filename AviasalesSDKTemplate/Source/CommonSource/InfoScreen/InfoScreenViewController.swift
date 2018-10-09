@@ -38,7 +38,7 @@ class InfoScreenViewController: UIViewController, InfoScreenIconImageViewFiveTim
 
     func setupTableView() {
         tableView.backgroundColor = .white
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: tabBarController?.tabBar.frame.height ?? 0, right: 0)

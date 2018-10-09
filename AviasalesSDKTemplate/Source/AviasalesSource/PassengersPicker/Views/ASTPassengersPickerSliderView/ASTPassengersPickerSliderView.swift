@@ -22,7 +22,7 @@ class ASTPassengersPickerSliderView: UIView {
     }
 
     func loadViewFromNib() {
-        view = Bundle.main.loadNibNamed("ASTPassengersPickerSliderView", owner: self, options: nil)?.first as! UIView
+        view = (Bundle.main.loadNibNamed("ASTPassengersPickerSliderView", owner: self, options: nil)?.first as! UIView)
         view.frame = bounds
         addSubview(view)
     }

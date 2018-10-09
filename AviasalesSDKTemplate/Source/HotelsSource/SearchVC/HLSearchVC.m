@@ -97,6 +97,7 @@
 - (void)tryToStartSearchWithSearchInfo:(HLSearchInfo *)searchInfo
 {
     if ([self.searchInfo readyToSearch]) {
+        [self trackHotelsSearchEvent];
         [self performSearchWithSearchInfo:searchInfo];
     } else {
         [HLAlertsFabric showEmptySearchFormAlert:searchInfo inController:self];
@@ -130,6 +131,13 @@
 {
     self.searchInfo.city = city;
     [self updateControls];
+}
+
+#pragma mark - Analytics
+
+- (void)trackHotelsSearchEvent {
+    HotelsSearchEvent *event = [[HotelsSearchEvent alloc] initWithSearchInfo:self.searchInfo];
+    [AnalyticsManager logWithEvent:event];
 }
 
 #pragma mark - Actions

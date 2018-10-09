@@ -209,7 +209,7 @@ class HLCityPickerVC: ASTGroupedSearchVC {
 
             self.cancelToken?.cancel()
             self.cancelToken = CancelToken()
-            ServiceLocator.shared.api.autocomplete(text: searchText, limit: 10).promise(cancelToken: self.cancelToken).then { autocompleteResp in
+            ServiceLocator.shared.api.autocomplete(text: searchText, limit: 10).promise(cancelToken: self.cancelToken).done { autocompleteResp in
                 self.citiesAutocompletionLoaderDidLoadCities(autocompleteResp.cities, hotels: autocompleteResp.hotels, airports: autocompleteResp.airports)
             }.catch { error in
                 self.citiesAutocompletionLoaderFailed(error)

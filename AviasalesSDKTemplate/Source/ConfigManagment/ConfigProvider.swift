@@ -6,8 +6,6 @@
 //  Copyright © 2017 Go Travel Un Limited. All rights reserved.
 //
 
-import ObjectMapper
-
 protocol ConfigProviderProtocol {
     
 }
@@ -30,16 +28,8 @@ extension ConfigProviderProtocol {
             fatalError("\(resource) has not been loaded")
         }
 
-        guard let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) else {
-            fatalError("\(resource) has not been serialized")
-        }
-
-        guard let json = plist as? [String : Any] else {
-            fatalError("\(resource) has incorrect format")
-        }
-
-        guard let config = Mapper<Config>().map(JSON: json) else {
-            fatalError("\(resource) map error")
+        guard let config = try? PropertyListDecoder().decode(Config.self, from: data) else {
+            fatalError("\(resource) decode error")
         }
 
         return config

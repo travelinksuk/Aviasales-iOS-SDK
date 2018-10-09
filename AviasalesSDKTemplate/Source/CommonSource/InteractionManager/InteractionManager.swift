@@ -71,7 +71,7 @@ class InteractionManager: NSObject, AviasalesAirportsGeoSearchPerformerDelegate 
     }
 
     private func requestHDKCity(iata: String) {
-        ServiceLocator.shared.api.autocomplete(text: iata, limit: 1).promise().then { [weak self] (response) in
+        ServiceLocator.shared.api.autocomplete(text: iata, limit: 1).promise().done { [weak self] (response) in
             self?.searchHotelsInfo?.city = response.cities.first
         }.catch { _ in }
     }
