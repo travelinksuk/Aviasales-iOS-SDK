@@ -13,19 +13,18 @@ import UIKit
     case destination
 }
 
-@objcMembers
 class ASAirportPickerViewController: UIViewController {
 
-    let presenter: ASAirportPickerPresenter
+    private let presenter: ASAirportPickerPresenter
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var sectionModels = [ASAirportPickerSectionViewModel]()
+    private var sectionModels = [ASAirportPickerSectionViewModel]()
 
     // MARK: - Initialization
 
-    init(type: ASAirportPickerType, selection: @escaping (JRSDKAirport) -> Void) {
+    @objc init(type: ASAirportPickerType, selection: @escaping (JRSDKAirport) -> Void) {
         presenter = ASAirportPickerPresenter(type: type, selection: selection)
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,8 +45,9 @@ class ASAirportPickerViewController: UIViewController {
         super.viewWillAppear(animated)
         searchBar.becomeFirstResponder()
     }
+}
 
-    // MARK: - Setup
+private extension ASAirportPickerViewController {
 
     func setupViewController() {
         setupTableView()
@@ -101,6 +101,10 @@ extension ASAirportPickerViewController: UISearchBarDelegate {
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // crash for test purpose
+        if ConfigManager.shared.firebaseEnabled && searchBar.text == "crashmeplease" {
+            fatalError("Test crash for QA")
+        }
         searchBar.resignFirstResponder()
     }
 

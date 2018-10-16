@@ -103,10 +103,9 @@
 }
 
 - (void)updateTableViewContentOffset {
-    CGFloat tableViewHeight = self.tableView.bounds.size.height;
-    CGFloat tableViewContentHeight = self.tableView.contentSize.height;
-    CGFloat diff = MAX(0.0, tableViewContentHeight - tableViewHeight);
-    [self.tableView setContentOffset:CGPointMake(0.0, diff) animated:YES];
+    NSUInteger lastRow = self.viewModel.cellViewModels.count > 0 ? self.viewModel.cellViewModels.count - 1 : 0;
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 #pragma mark - ASTComplexSearchFormViewControllerProtocol

@@ -15,8 +15,8 @@
 /**
  * Should be implemeneted by the delegate if it wants to be notified about value changes of the slider
  *
- * @param (GCXSteppedSlider*) slider instance
- * @param (id) selected value
+ * @param slider - slider instance
+ * @param selectedValue - selected value
  */
 - (void)steppedSlider:(GCXSteppedSlider* __nonnull)slider valueChanged:(id __nullable)selectedValue;
 
@@ -25,8 +25,8 @@
  * Must be implemeneted by the delegate and return the UIImage for the stepImage of the given stepValue
  *
  * @return (UIImage*) designated UIImage for the given stepValue
- * @param (GCXSteppedSlider*) slider instance
- * @param (id) stepValue which stepImage needs to be returned
+ * @param slider - slider instance
+ * @param stepValue - value which stepImage needs to be returned
  */
 - (UIImage* __nullable)steppedSlider:(GCXSteppedSlider* __nonnull)slider stepImageForValue:(id __nullable)stepValue;
 
@@ -35,8 +35,8 @@
  * Should be implemeneted by the delegate if it wants to control the stepImages size at the given stepValue
  *
  * @return (CGSize) designated size of stepImage at stepValue
- * @param (GCXSteppedSlider*) slider instance
- * @param (id) stepValue which stepImage's frame can be returned
+ * @param slider - slider instance
+ * @param stepValue - value which stepImage's frame can be returned
  */
 - (CGSize)steppedSlider:(GCXSteppedSlider* __nonnull)slider sizeForStepImageOfValue:(id __nullable)stepValue;
 
@@ -67,9 +67,9 @@
 /**
  * Designated initializer
  *
- * @param CGRect initial frame of slider
- * @param NSArray<id> Array of available, selectable values with this slider. May contain any objects.
- * @param id initially selected value, must exist in stepValues
+ * @param frame - initial frame of slider
+ * @param stepValues - Array of available, selectable values with this slider. May contain any objects.
+ * @param initialStep - initially selected value, must exist in stepValues
  */
 - (instancetype __nonnull)initWithFrame:(CGRect)frame stepValues:(NSArray<id>* __nonnull)stepValues initialStep:(id __nullable)initialStep;
 

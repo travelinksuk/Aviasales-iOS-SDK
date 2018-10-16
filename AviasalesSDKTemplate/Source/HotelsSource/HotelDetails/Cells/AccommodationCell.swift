@@ -31,7 +31,7 @@ class AccommodationCell: HLAutolayoutCell {
         }
     }
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         createSubviews()
@@ -103,8 +103,8 @@ class AccommodationCell: HLAutolayoutCell {
     }
 
     class func canFill(_ title: String, text: String, cellWidth: CGFloat) -> Bool {
-        let titleWidth = title.hl_width(attributes: [NSAttributedStringKey.font: titleFont()], height: 17)
-        let textWidth = text.hl_width(attributes: [NSAttributedStringKey.font: titleFont()], height: 17)
+        let titleWidth = title.hl_width(attributes: [NSAttributedString.Key.font: titleFont()], height: 17)
+        let textWidth = text.hl_width(attributes: [NSAttributedString.Key.font: titleFont()], height: 17)
 
         let availableWidth = cellWidth - Consts.left - Consts.between - Consts.right
         return availableWidth > titleWidth + textWidth

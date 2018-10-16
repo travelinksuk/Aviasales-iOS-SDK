@@ -46,9 +46,9 @@ class HLKidAgePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = UIColor.clear
 
-        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[selfView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["selfView": self])
+        let verticalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[selfView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["selfView": self])
         onView.addConstraints(verticalConstraint)
-        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["selfView": self])
+        let horizontalConstraint = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["selfView": self])
         onView.addConstraints(horizontalConstraint)
         onView.layoutIfNeeded()
 
@@ -56,7 +56,7 @@ class HLKidAgePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         self.layoutIfNeeded()
 
         let duration = (animated ? 0.4 : 0.0)
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(),
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(),
             animations: { [weak self] () -> Void in
                 self?.pickerBottomConstraint.constant = bottomOffset
                 self?.layoutIfNeeded()
@@ -70,7 +70,7 @@ class HLKidAgePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         self.delegate?.didCloseAgeSelector()
 
         let duration = (animated ? 0.4 : 0.0)
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions(),
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions(),
             animations: { [weak self] () -> Void in
                 let agePickerBounds = self?.agePickerView?.bounds ?? CGRect.zero
                 let pickerHeaderBounds = self?.pickerHeaderView?.bounds ?? CGRect.zero
@@ -93,8 +93,8 @@ class HLKidAgePickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         agePickerView?.selectRow(kidAge, inComponent: 0, animated: false)
 
         let normalColor = JRColorScheme.actionColor()
-        applyButton.setTitleColor(normalColor, for: UIControlState())
-        cancelButton.setTitleColor(normalColor, for: UIControlState())
+        applyButton.setTitleColor(normalColor, for: UIControl.State())
+        cancelButton.setTitleColor(normalColor, for: UIControl.State())
         applyButton.titleLabel?.font = UIFont.systemFont(ofSize: 14.0)
 
         applyButton.setTitle(NSLS("HL_KIDS_PICKER_APPLY_BUTTON_TITLE"), for: .normal)

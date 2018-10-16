@@ -56,7 +56,7 @@ class BookingPeekVC: PeekTableVC {
         let bookAction = UIPreviewAction(title: bookTitle, style: .default) { [weak self]  (action, viewController) -> Void in
             guard let `self` = self else { return }
 
-            let bookBrowserPresenter = BookBrowserViewPresenter(room: room)
+            let bookBrowserPresenter = BookBrowserViewPresenter(variant: self.variant, room: room)
             let browserViewController = BrowserViewController(presenter: bookBrowserPresenter)
             let navigationController = JRNavigationController(rootViewController: browserViewController)
 

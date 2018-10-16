@@ -21,6 +21,12 @@ protocol ASTWaitingScreenViewProtocol: NSObjectProtocol {
 
 class ASTWaitingScreenPresenter: NSObject {
 
+    private enum SearchState {
+        case started
+        case succeed
+        case failed(Int)
+    }
+
     weak var view: ASTWaitingScreenViewProtocol?
 
     private let searchInfo: JRSDKSearchInfo
@@ -35,6 +41,8 @@ class ASTWaitingScreenPresenter: NSObject {
             }
         }
     }
+
+    private var searchState: SearchState = .started
 
     init(searchInfo: JRSDKSearchInfo) {
         self.searchInfo = searchInfo
@@ -61,12 +69,13 @@ class ASTWaitingScreenPresenter: NSObject {
         canShowError = true
     }
 
-    func handleUnload() {
-        searchPerformer.terminateSearch()
-    }
-
     func handleError() {
         view?.pop()
+    }
+
+    func handleUnload() {
+        trackFlightsSearchEvent()
+        searchPerformer.terminateSearch()
     }
 }
 
@@ -133,10 +142,14 @@ private extension ASTWaitingScreenPresenter {
         return result
     }
 
-    func show(errorMessage: String) {
+    func show(error: NSError) {
+
+        searchState = .failed(error.code)
+
+        let message = description(from: error)
 
         let showErrorAction: (() -> Void)? = { [weak self] in
-            self?.view?.showError(title: NSLS("JR_ERROR_TITLE"), message: errorMessage, cancel: NSLS("JR_OK_BUTTON"))
+            self?.view?.showError(title: NSLS("JR_ERROR_TITLE"), message: message, cancel: NSLS("JR_OK_BUTTON"))
         }
 
         if canShowError {
@@ -144,6 +157,22 @@ private extension ASTWaitingScreenPresenter {
         } else {
             self.showErrorAction = showErrorAction
         }
+    }
+
+    func trackFlightsSearchEvent() {
+        
+        let event: FlightsSearchEvent
+        
+        switch searchState {
+        case .started:
+            event = FlightsSearchEvent(searchInfo: searchInfo, result: .cancelled)
+        case .succeed:
+            event = FlightsSearchEvent(searchInfo: searchInfo, result: .succeed)
+        case .failed(let code):
+            event = FlightsSearchEvent(searchInfo: searchInfo, result: .failed(code))
+        }
+        
+        AnalyticsManager.log(event: event)
     }
 }
 
@@ -164,9 +193,10 @@ extension ASTWaitingScreenPresenter: JRSDKSearchPerformerDelegate {
         let searchResult = result.tickets.count == 0 ? metropolitanResult : result
 
         if let filteredSearchResult = filter(searchResult: searchResult, by: ConfigManager.shared.availableAirlines), filteredSearchResult.tickets.count > 0 {
+            searchState = .succeed
             view?.showSearchResults(searchResult: filteredSearchResult, searchInfo: searchInfo)
         } else {
-            show(errorMessage: NSLS("JR_WAITING_ERROR_NOT_FOUND_MESSAGE"))
+            show(error: NSError.error(code: JRSDKServerAPIError.searchNoTickets))
         }
     }
 
@@ -175,6 +205,6 @@ extension ASTWaitingScreenPresenter: JRSDKSearchPerformerDelegate {
     }
 
     func searchPerformer(_ searchPerformer: JRSDKSearchPerformer!, didFailSearchWithError error: Error!) {
-        show(errorMessage: description(from: error as NSError))
+        show(error: error as NSError)
     }
 }

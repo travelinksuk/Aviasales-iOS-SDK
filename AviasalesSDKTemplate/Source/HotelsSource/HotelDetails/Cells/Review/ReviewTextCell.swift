@@ -5,7 +5,7 @@ class ReviewTextCell: UITableViewCell {
     private static let topContentMargin: CGFloat = 5
     let separatorView = SeparatorView()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         createSubviews()

@@ -9,13 +9,13 @@ public extension UIView {
     }
 
     @discardableResult
-    func addBlurEffect(with style: UIBlurEffectStyle) -> UIVisualEffectView {
+    func addBlurEffect(with style: UIBlurEffect.Style) -> UIVisualEffectView {
         backgroundColor = UIColor.clear
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         addSubview(blurEffectView)
         blurEffectView.autoPinEdgesToSuperviewEdges()
-        sendSubview(toBack: blurEffectView)
+        sendSubviewToBack(blurEffectView)
 
         return blurEffectView
     }

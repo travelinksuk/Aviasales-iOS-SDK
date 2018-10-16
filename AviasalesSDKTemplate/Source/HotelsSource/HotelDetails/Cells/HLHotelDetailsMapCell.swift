@@ -21,7 +21,7 @@ class HLHotelDetailsMapCell: HLHotelDetailsTableCell, MKMapViewDelegate {
 
         if !hotelAddressIsEmpty {
             let font = UIFont.systemFont(ofSize: 13.0)
-            let textHeight = hotelAddress.hl_height(attributes: [NSAttributedStringKey.font: font], width: width - kLabelMarginsLength)
+            let textHeight = hotelAddress.hl_height(attributes: [NSAttributedString.Key.font: font], width: width - kLabelMarginsLength)
             cellHeight += textHeight
         }
 

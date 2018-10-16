@@ -51,3 +51,5 @@ Set up the ```feedback_email``` and ```itunes_link``` parameters in ```default_c
 **Fabric/Crashlytics** SDK is included in the Template project. It monitors crashes and helps distribute builds to testers. To activate these functions you need to register and get **API Key** и **Build Secret** at https://fabric.io. Further steps:
 1) Fill in corresponding values in **fabric.sh** in the root folder
 2) Fill in **Fabric > APIKey** in **AviasalesSDKTemplate-Info.plist**
+## 🏭 **Use of Firebase**
+Template app supports **Firebase** services. To enable them, please connect your app in the Firebase console, download and copy the **GoogleService-Info.plist** file and switch the **firebase_enabled** flag to **YES** in the **default_config.plist** file. Out of the box there is an analytics support for: Search / Ticket opened / Ticket booked in the airlines part and Search / Hotel opened / Hotel booked in the hotels part of the app.

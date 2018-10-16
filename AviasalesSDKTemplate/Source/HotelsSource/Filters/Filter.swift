@@ -2,7 +2,7 @@ struct AmenityShortConst {
     static let restaurant = "0"
     static let parking = "1"
     static let pets = "3"
-    static let tv = "4"                 // swiftlint:disable:this variable_name
+    static let tv = "4"
     static let laundry = "5"
     static let airConditioning = "6"
     static let pool = "8"

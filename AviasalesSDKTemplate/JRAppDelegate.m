@@ -7,16 +7,10 @@
 
 #import "JRAppDelegate.h"
 #import "JRColorScheme.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
 
 @implementation JRAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-#ifndef DEBUG
-    [Fabric with:@[[Crashlytics class]]];
-#endif
 
     [AppConfigurator configure];
     [AppearanceSettings setup];

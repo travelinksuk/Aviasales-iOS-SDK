@@ -32,8 +32,8 @@
         let textFont = UIFont.systemFont(ofSize: 12)
         let numberFont = UIFont.systemFont(ofSize: 12)
 
-        let textStyle = [NSAttributedStringKey.font: textFont,
-                         NSAttributedStringKey.foregroundColor: textColor]
+        let textStyle = [NSAttributedString.Key.font: textFont,
+                         NSAttributedString.Key.foregroundColor: textColor]
 
         let lowerStr = StringUtils.attributedPriceString(withPrice: minValue, currency:currency, font:numberFont)
         let upperStr = StringUtils.attributedPriceString(withPrice: maxValue, currency:currency, font:numberFont)
@@ -54,12 +54,12 @@
 
         let lowerRange = (result.string as NSString).range(of: lowerStr.string)
         if lowerRange.location != NSNotFound {
-            result.addAttribute(NSAttributedStringKey.foregroundColor, value: numberColor, range: lowerRange)
+            result.addAttribute(NSAttributedString.Key.foregroundColor, value: numberColor, range: lowerRange)
         }
 
         let upperRange = (result.string as NSString).range(of: upperStr.string, options: String.CompareOptions.backwards)
         if upperRange.location != NSNotFound {
-            result.addAttribute(NSAttributedStringKey.foregroundColor, value: numberColor, range: upperRange)
+            result.addAttribute(NSAttributedString.Key.foregroundColor, value: numberColor, range: upperRange)
         }
 
         return result
@@ -71,11 +71,11 @@
                                        textColor: UIColor = JRColorScheme.lightTextColor(),
                                        numberColor: UIColor = JRColorScheme.lightTextColor()) -> NSAttributedString {
 
-        let textStyle = [NSAttributedStringKey.foregroundColor: textColor,
-                         NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)]
+        let textStyle = [NSAttributedString.Key.foregroundColor: textColor,
+                         NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
 
-        let numberStyle = [NSAttributedStringKey.foregroundColor: numberColor,
-                           NSAttributedStringKey.font: UIFont.systemFont(ofSize: 12)]
+        let numberStyle = [NSAttributedString.Key.foregroundColor: numberColor,
+                           NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
 
         let textString = NSLS("HL_LOC_FILTER_FROM_STRING") + " "
         let numberString = shortRatingString(rating)
@@ -129,13 +129,13 @@
         guard rating > 0 else { return NSAttributedString() }
 
         let ratingNumbers = shortRatingString(forRating: rating)
-        let boldAttr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold), NSAttributedStringKey.foregroundColor: UIColor.white]
+        let boldAttr = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.bold), NSAttributedString.Key.foregroundColor: UIColor.white]
         let attributedText = NSMutableAttributedString(string: ratingNumbers, attributes: boldAttr)
         if full {
-            let lightAttr = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light), NSAttributedStringKey.foregroundColor: UIColor.white]
+            let lightAttr = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15, weight: UIFont.Weight.light), NSAttributedString.Key.foregroundColor: UIColor.white]
             let attributedRatingText = NSAttributedString(string: ratingText(forRating: rating), attributes: lightAttr)
             attributedText.append(attributedRatingText)
-            attributedText.addAttribute(NSAttributedStringKey.kern, value: 5, range: NSRange(location: ratingNumbers.count - 1, length: 1))
+            attributedText.addAttribute(NSAttributedString.Key.kern, value: 5, range: NSRange(location: ratingNumbers.count - 1, length: 1))
         }
 
         return attributedText

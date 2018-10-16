@@ -32,6 +32,7 @@ extension GateBrowserViewPresenter: BrowserViewPresenter {
         view.updateControls()
         view.showLoading()
         purchasePerformer.perform(with: self)
+        trackFlightsBuyEvent()
     }
 
     func handleClose() {
@@ -56,7 +57,7 @@ extension GateBrowserViewPresenter: BrowserViewPresenter {
     func handleFail(error: Error) {
         view?.hideLoading()
         view?.hideActivity()
-        if !error.isCancelledError {
+        if !error.isCancelled {
             view?.showError(message: error.localizedDescription)
         }
     }
@@ -77,6 +78,14 @@ extension GateBrowserViewPresenter: BrowserViewPresenter {
 
     func handleGoForward() {
         view?.goForward()
+    }
+}
+
+private extension GateBrowserViewPresenter {
+
+    func trackFlightsBuyEvent() {
+        let event = FlightsBuyEvent(proposal: proposal)
+        AnalyticsManager.log(event: event)
     }
 }
 

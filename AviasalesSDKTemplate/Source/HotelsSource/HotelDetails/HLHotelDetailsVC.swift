@@ -120,6 +120,8 @@ class HLHotelDetailsCollectionView: UICollectionView {
         hotelView.photoIndexChangeHandler = { [weak self] (index: Int) -> Void in
             self?.photoIndex = index
         }
+
+        trackHotelsVariantEvent()
     }
 
     private func addNameAndStarsView() {
@@ -372,6 +374,13 @@ class HLHotelDetailsCollectionView: UICollectionView {
         return TableSection(name: "", items: [errorItem])
     }
 
+    // MARK: - Analytics
+
+    private func trackHotelsVariantEvent() {
+        let event = HotelsVariantEvent(variant: variant)
+        AnalyticsManager.log(event: event)
+    }
+
     // MARK: - UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -534,7 +543,7 @@ class HLHotelDetailsCollectionView: UICollectionView {
         let api = ServiceLocator.shared.api
         reviewsState = .loading
 
-        api.reviews(hotelId: variant.hotel.hotelId, limit: kMaxReviewsLimit).promise().then { [weak self] reviewsResponse -> Void in
+        api.reviews(hotelId: variant.hotel.hotelId, limit: kMaxReviewsLimit).promise().done { [weak self] reviewsResponse -> Void in
             guard let `self` = self else { return }
             self.variant.hotel.reviews = reviewsResponse.reviews
             self.reviewsState = .loaded
@@ -661,7 +670,7 @@ extension HLHotelDetailsVC: HLHotelDetailsTabCellDelegate {
             return
         }
 
-        let bookBrowserPresenter = BookBrowserViewPresenter(room: room)
+        let bookBrowserPresenter = BookBrowserViewPresenter(variant: variant, room: room)
         let browserViewController = BrowserViewController(presenter: bookBrowserPresenter)
         let navigationController = JRNavigationController(rootViewController: browserViewController)
 

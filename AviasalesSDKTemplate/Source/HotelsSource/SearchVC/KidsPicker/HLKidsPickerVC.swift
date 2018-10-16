@@ -103,7 +103,7 @@ class HLKidsPickerVC: HLCommonVC, UITableViewDataSource, UITableViewDelegate, HL
 
         view.addSubview(lockerView!)
 
-        let constraintWidth = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["selfView": lockerView!])
+        let constraintWidth = NSLayoutConstraint.constraints(withVisualFormat: "H:|[selfView]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: ["selfView": lockerView!])
         view.addConstraints(constraintWidth)
     }
 
@@ -175,8 +175,8 @@ class HLKidsPickerVC: HLCommonVC, UITableViewDataSource, UITableViewDelegate, HL
         }
     }
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        return UITableViewCellEditingStyle.none
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.none
     }
 
     func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {

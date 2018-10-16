@@ -61,7 +61,7 @@ class HLSearchForm: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        NotificationCenter.default.addObserver(self, selector:#selector(HLSearchForm.updateExpiredDates), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(HLSearchForm.updateExpiredDates), name: UIApplication.didBecomeActiveNotification, object: nil)
         registerForCurrentCityNotifications()
     }
 

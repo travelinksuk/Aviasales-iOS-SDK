@@ -6,7 +6,7 @@ class TableController: NSObject, UITableViewDelegate, UITableViewDataSource {
     override func awakeFromNib() {
         super.awakeFromNib()
         tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
     }
 
     var sections = [TableSectionProtocol]() {

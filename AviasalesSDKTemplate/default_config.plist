@@ -14,6 +14,8 @@
 	<true/>
 	<key>default_locale</key>
 	<string>en</string>
+	<key>firebase_enabled</key>
+	<false/>
 	<key>app_description</key>
 	<dict>
 		<key>en</key>
@@ -38,22 +40,22 @@
 		<key>hotels_city</key>
 		<dict>
 			<key>id</key>
-			<string></string>
+			<string>13964</string>
 			<key>selectable</key>
 			<true/>
 			<key>names</key>
 			<dict>
 				<key>en</key>
-				<string></string>
+				<string>Venice</string>
 				<key>ru</key>
-				<string></string>
+				<string>Венеция</string>
 			</dict>
 			<key>headers</key>
 			<dict>
 				<key>en</key>
-				<string></string>
+				<string>Search the best place to rest in Venice</string>
 				<key>ru</key>
-				<string></string>
+				<string>Лучшие цены на отели в Венеции</string>
 			</dict>
 		</dict>
 	</dict>

@@ -155,8 +155,8 @@ class HLHotelCardView: UIView {
 
 extension HLHotelCardView: HLPhotoScrollViewDelegate {
 
-    func photoCollectionViewImageContentMode() -> UIViewContentMode {
-        return self.hotel.photosIds.count == 0 ? UIViewContentMode.center : UIViewContentMode.scaleAspectFill
+    func photoCollectionViewImageContentMode() -> UIView.ContentMode {
+        return self.hotel.photosIds.count == 0 ? UIView.ContentMode.center : UIView.ContentMode.scaleAspectFill
     }
 
     func photoScrollPhotoIndexChanged(_ index: Int) {

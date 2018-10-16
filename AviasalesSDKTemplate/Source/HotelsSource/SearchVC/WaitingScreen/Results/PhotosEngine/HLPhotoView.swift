@@ -24,7 +24,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
     }
     var needShowPlaceholderWhileLoading: Bool = false
 
-    var placeholderContentMode: UIViewContentMode = UIViewContentMode.center {
+    var placeholderContentMode: UIView.ContentMode = UIView.ContentMode.center {
         didSet {
             if self.image == self.placeholderImage {
                 self.imageView?.contentMode = self.placeholderContentMode
@@ -32,7 +32,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
         }
     }
 
-    var imageContentMode: UIViewContentMode = UIViewContentMode.scaleAspectFill {
+    var imageContentMode: UIView.ContentMode = UIView.ContentMode.scaleAspectFill {
         didSet {
             if self.image != self.placeholderImage {
                 self.imageView?.contentMode = self.imageContentMode
@@ -107,7 +107,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
         }
 
         self.timer = Timer(timeInterval: delay, target: self, selector: #selector(HLPhotoView.onTimer(_:)), userInfo: userInfo, repeats: false)
-        RunLoop.main.add(self.timer!, forMode: RunLoopMode.commonModes)
+        RunLoop.main.add(self.timer!, forMode: RunLoop.Mode.common)
     }
 
     func setImage(url: URL, placeholder: UIImage?, animated: Bool) {
@@ -145,7 +145,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
         addProgressView()
         self.addOverlayView()
 
-        self.layer.contentsGravity = kCAGravityCenter
+        self.layer.contentsGravity = CALayerContentsGravity.center
         self.layer.masksToBounds = true
 
         let notificationName = NSNotification.Name(rawValue: HLPhotoManagerNotifications.DownloadWillStart)
@@ -162,8 +162,8 @@ class HLPhotoView: UIView, CAAnimationDelegate {
             transition.delegate = self
             transition.duration = duration
             transition.isRemovedOnCompletion = true
-            transition.type = kCATransitionFade
-            transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            transition.type = CATransitionType.fade
+            transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             self.imageView.layer.add(transition, forKey: "fadeImageAnimation")
         }
     }
@@ -181,7 +181,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
     fileprivate func addImageView() {
         self.imageView = UIImageView()
         self.imageView.frame = self.bounds
-        self.imageView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.imageView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         self.addSubview(self.imageView)
     }
 
@@ -189,7 +189,7 @@ class HLPhotoView: UIView, CAAnimationDelegate {
         self.overlayView = UIView()
         self.overlayView.backgroundColor = UIColor.black
         self.overlayView.frame = self.bounds
-        self.overlayView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.overlayView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         self.hideOverlayViewAimated(false)
         self.addSubview(self.overlayView)
     }

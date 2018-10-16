@@ -38,6 +38,7 @@ class ConfigManager: NSObject {
     lazy var hotelsCityName: String? = self.localized(self.config?.searchParams?.hotelsCity?.names)
     lazy var hotelsCityHeader: String? = self.localized(self.config?.searchParams?.hotelsCity?.headers)
     lazy var defaultLocale: String = self.config?.defaultLocale ?? "en"
+    lazy var firebaseEnabled: Bool = self.config?.firebaseEnabled ?? false
 }
 
 private extension ConfigManager {

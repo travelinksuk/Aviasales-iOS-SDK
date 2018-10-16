@@ -37,7 +37,7 @@ class ASTWaitingScreenViewController: UIViewController {
         setupViewController()
         presenter.handleLoad(view: self)
     }
-
+    
     // MARK: - Setup
 
     func setupViewController() {
@@ -52,7 +52,7 @@ class ASTWaitingScreenViewController: UIViewController {
 
     func updateInfoLabel(text: String, range: NSRange) {
         let attributedText = NSMutableAttributedString(string: text)
-        attributedText.addAttribute(NSAttributedStringKey.foregroundColor, value: JRColorScheme.mainColor(), range: range)
+        attributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: JRColorScheme.mainColor(), range: range)
         infoLabel.attributedText = attributedText
     }
 

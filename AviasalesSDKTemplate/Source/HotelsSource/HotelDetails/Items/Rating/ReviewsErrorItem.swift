@@ -2,7 +2,7 @@ class ReviewsErrorItem: TableItem {
     var buttonHandler: (() -> Void)?
 
     override func cellHeight(tableWidth: CGFloat) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
 
     override func cell(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {

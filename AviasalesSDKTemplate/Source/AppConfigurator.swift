@@ -8,12 +8,13 @@
 
 import Foundation
 import Appodeal
+import Firebase
 
-@objcMembers
 class AppConfigurator: NSObject {
 
-    static func configure() {
+    @objc static func configure() {
         configureAviasalesSDK()
+        configureAnalytics()
         configureAppodeal()
     }
 }
@@ -26,9 +27,24 @@ private extension AppConfigurator {
         let marker = ConfigManager.shared.partnerMarker
         let locale = Locale.current.identifier
 
+        if token.isEmpty {
+            fatalError("Invalid token")
+        }
+
+        if marker.isEmpty {
+            fatalError("Invalid marker")
+        }
+
         let configuration = AviasalesSDKInitialConfiguration(apiToken: token, apiLocale: locale, partnerMarker: marker)
 
         AviasalesSDK.setup(with: configuration)
+    }
+
+    static func configureAnalytics() {
+        if ConfigManager.shared.firebaseEnabled {
+            FirebaseApp.configure()
+            AnalyticsManager.initialize(with: FirebaseAnalyticsEngine())
+        }
     }
 
     static func configureAppodeal() {

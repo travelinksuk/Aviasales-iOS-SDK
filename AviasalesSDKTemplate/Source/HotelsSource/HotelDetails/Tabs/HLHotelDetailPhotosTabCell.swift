@@ -25,7 +25,7 @@ class HLHotelDetailPhotosTabCell: HLHotelDetailsTabCell, HLPhotoGridViewDelegate
     }
 
     func setSelectedStyleForPhotoIndex(_ photoIndex: Int) {
-        photoGrid.collectionView.selectItem(at: IndexPath(item: photoIndex, section: 0), animated: false, scrollPosition: UICollectionViewScrollPosition())
+        photoGrid.collectionView.selectItem(at: IndexPath(item: photoIndex, section: 0), animated: false, scrollPosition: UICollectionView.ScrollPosition())
     }
 
     // MARK: - Public

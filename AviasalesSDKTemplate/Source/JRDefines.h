@@ -77,15 +77,19 @@ BOOL iPhone35Inch(void);
 BOOL iPhone47Inch(void);
 BOOL iPhone55Inch(void);
 BOOL iPhone58Inch(void);
+BOOL iPhone61Inch(void);
+BOOL iPhone65Inch(void);
 
 BOOL iPad(void);
 
 typedef NS_ENUM(NSInteger, DeviceSizeType) {
-    DeviceSizeTypeIPhone58Inch, // iPhone X
-    DeviceSizeTypeIPhone55Inch, // iPhone 6+
-    DeviceSizeTypeIPhone47Inch, // iPhone 6
-    DeviceSizeTypeIPhone4Inch,  // iPhone 5, 5c, 5s,
-    DeviceSizeTypeIPhone35Inch, // iPhone 4s
+    DeviceSizeTypeIPhone65Inch, // iPhone XS Max
+    DeviceSizeTypeIPhone61Inch, // iPhone XR
+    DeviceSizeTypeIPhone58Inch, // iPhone X, XS
+    DeviceSizeTypeIPhone55Inch, // iPhone 6+, 6S+, 7+, 8+
+    DeviceSizeTypeIPhone47Inch, // iPhone 6, 6S, 7, 8
+    DeviceSizeTypeIPhone4Inch,  // iPhone 5, 5C, 5S, SE
+    DeviceSizeTypeIPhone35Inch, // iPhone 4S and previous
     DeviceSizeTypeIPad          // For all iPads
 };
 

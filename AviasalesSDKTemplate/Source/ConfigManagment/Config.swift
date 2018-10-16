@@ -6,10 +6,8 @@
 //  Copyright © 2017 Go Travel Un Limited. All rights reserved.
 //
 
-import ObjectMapper
-
-struct Config: Mappable {
-
+struct Config: Codable {
+    
     var partnerMarker: String?
     var apiToken: String?
     var appodealKey: String?
@@ -24,101 +22,83 @@ struct Config: Mappable {
     var colorParams: ColorParams?
     var searchParams: SearchParams?
     var defaultLocale: String?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        partnerMarker <- map["partner_marker"]
-        apiToken <- map["api_token"]
-        appodealKey <- map["appodeal_key"]
-        flightsEnabled <- map["flights_enabled"]
-        hotelsEnabled <- map["hotels_enabled"]
-        appLogo <- map["app_logo"]
-        appNames <- map["app_name"]
-        appDescriptions <- map["app_description"]
-        feedbackEmail <- map["feedback_email"]
-        itunesLink <- map["itunes_link"]
-        externalLinks <- map["external_links"]
-        colorParams <- map["color_params"]
-        searchParams <- map["search_params"]
-        defaultLocale <- map["default_locale"]
+    var firebaseEnabled: Bool?
+    
+    private enum CodingKeys: String, CodingKey {
+        case partnerMarker = "partner_marker"
+        case apiToken = "api_token"
+        case appodealKey = "appodeal_key"
+        case flightsEnabled = "flights_enabled"
+        case hotelsEnabled = "hotels_enabled"
+        case appLogo = "app_logo"
+        case appNames = "app_name"
+        case appDescriptions = "app_description"
+        case feedbackEmail = "feedback_email"
+        case itunesLink = "itunes_link"
+        case externalLinks = "external_links"
+        case colorParams = "color_params"
+        case searchParams = "search_params"
+        case defaultLocale = "default_locale"
+        case firebaseEnabled = "firebase_enabled"
     }
 }
 
-struct ExternalLink: Mappable {
-
+struct ExternalLink: Codable {
+    
     var url: String?
     var name: String?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        url <- map["url"]
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case url = "url"
     }
 }
 
-struct ColorParams: Mappable {
-
+struct ColorParams: Codable {
+    
     var mainColor: String?
     var actionColor: String?
     var formTintColor: String?
     var formBackgroundColor: String?
     var formTextColor: String?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        mainColor <- map["main_color"]
-        actionColor <- map["action_color"]
-        formTintColor <- map["form_tint_color"]
-        formBackgroundColor <- map["form_background_color"]
-        formTextColor <- map["form_text_color"]
+    
+    private enum CodingKeys: String, CodingKey {
+        case mainColor = "main_color"
+        case actionColor = "action_color"
+        case formTintColor = "form_tint_color"
+        case formBackgroundColor = "form_background_color"
+        case formTextColor = "form_text_color"
     }
 }
 
-struct SearchParams: Mappable {
-
+struct SearchParams: Codable {
+    
     var defaultCurrency: String?
     var flightsOrigin: String?
     var flightsDestination: String?
     var availableAirlines: [String]?
     var hotelsCity: SearchCity?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        defaultCurrency <- map["default_currency"]
-        flightsOrigin <- map["flights_origin"]
-        flightsDestination <- map["flights_destination"]
-        availableAirlines <- map["available_airlines"]
-        hotelsCity <- map["hotels_city"]
+    
+    private enum CodingKeys: String, CodingKey {
+        case defaultCurrency = "default_currency"
+        case flightsOrigin = "flights_origin"
+        case flightsDestination = "flights_destination"
+        case availableAirlines = "available_airlines"
+        case hotelsCity = "hotels_city"
     }
 }
 
-struct SearchCity: Mappable {
-
+struct SearchCity: Codable {
+    
     var identifier: String?
     var selectable: Bool?
     var names: [String : String]?
     var headers: [String : String]?
-
-    init?(map: Map) {
-
-    }
-
-    mutating func mapping(map: Map) {
-        identifier <- map["id"]
-        selectable <- map["selectable"]
-        names <- map["names"]
-        headers <- map["headers"]
+    
+    private enum CodingKeys: String, CodingKey {
+        case identifier = "id"
+        case selectable = "selectable"
+        case names = "names"
+        case headers = "headers"
     }
 }

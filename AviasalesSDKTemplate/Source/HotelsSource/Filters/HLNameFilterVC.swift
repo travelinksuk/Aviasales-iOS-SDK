@@ -4,7 +4,7 @@ class HLNameFilterVC: ASTGroupedSearchVC, HLFilterDelegate {
 
     var filter: Filter! {
         didSet {
-            self.privateFilter = self.filter.copy() as! Filter
+            self.privateFilter = (self.filter.copy() as! Filter)
             self.privateFilter.delegate = self
             self.privateFilter.searchResult = self.filter.searchResult
         }

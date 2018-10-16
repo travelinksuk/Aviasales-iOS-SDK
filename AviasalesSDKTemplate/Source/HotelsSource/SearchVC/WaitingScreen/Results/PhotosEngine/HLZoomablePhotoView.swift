@@ -41,7 +41,7 @@ class HLZoomablePhotoView: HLPhotoView {
 
         self.imageView.removeFromSuperview()
         self.scrollView.addSubview(self.imageView)
-        self.bringSubview(toFront: self.progressView)
+        self.bringSubviewToFront(self.progressView)
 
         self.doubleTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(HLZoomablePhotoView.onDoubleTap(_:)))
         self.doubleTapGestureRecognizer.numberOfTapsRequired = 2
@@ -54,9 +54,9 @@ class HLZoomablePhotoView: HLPhotoView {
     fileprivate func addScrollView() {
         self.scrollView = UIScrollView(frame: self.bounds)
         self.scrollView.delegate = self
-        self.scrollView.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.scrollView.autoresizingMask = [UIView.AutoresizingMask.flexibleWidth, UIView.AutoresizingMask.flexibleHeight]
         self.scrollView.isUserInteractionEnabled = self.zoomEnabled
-        self.scrollView.layer.contentsGravity = kCAGravityCenter
+        self.scrollView.layer.contentsGravity = CALayerContentsGravity.center
         self.addSubview(self.scrollView)
     }
 

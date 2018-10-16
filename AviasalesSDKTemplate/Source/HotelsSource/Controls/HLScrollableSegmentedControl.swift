@@ -135,7 +135,7 @@ protocol HLScrollableSegmentedControlDelegate: class, NSObjectProtocol {
     fileprivate func initialize() {
         let cellNib = UINib(nibName: "HLControlCollectionViewCell", bundle: nil)
         let collectionLayout = UICollectionViewFlowLayout()
-        collectionLayout.scrollDirection = UICollectionViewScrollDirection.horizontal
+        collectionLayout.scrollDirection = UICollectionView.ScrollDirection.horizontal
         collectionLayout.minimumInteritemSpacing = 0
         collectionLayout.minimumLineSpacing = 0
         segmentsCollectionView.delegate = self
@@ -160,7 +160,7 @@ protocol HLScrollableSegmentedControlDelegate: class, NSObjectProtocol {
     fileprivate func calculateCellSizes() -> [CGSize] {
         var sizes: [CGSize] = []
         for title in items {
-            let attributes = [NSAttributedStringKey.font: selectedTextFont]
+            let attributes = [NSAttributedString.Key.font: selectedTextFont]
             let width = title.hl_width(attributes: attributes, height: bounds.height) + cellInset * 2.0
             let size = CGSize(width: width, height: bounds.height)
             sizes.append(size)
@@ -196,11 +196,11 @@ protocol HLScrollableSegmentedControlDelegate: class, NSObjectProtocol {
         let indexPath = IndexPath(item: index, section: section)
         guard segmentsCollectionView.numberOfSections > section && index < segmentsCollectionView.numberOfItems(inSection: section) else { return }
 
-        segmentsCollectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.left, animated: animated)
+        segmentsCollectionView.scrollToItem(at: indexPath, at: UICollectionView.ScrollPosition.left, animated: animated)
         if let cell = segmentsCollectionView.cellForItem(at: indexPath) as? HLControlCollectionViewCell {
             cell.setCustomSelected(true)
         }
-        segmentsCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
+        segmentsCollectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionView.ScrollPosition())
         updateSelectionViewWithIndex(index, animated: true)
     }
 
@@ -208,7 +208,7 @@ protocol HLScrollableSegmentedControlDelegate: class, NSObjectProtocol {
         guard index < items.count else { return }
 
         let duration = animated ? 0.2 : 0.0
-        let attributes = [NSAttributedStringKey.font: selectedTextFont]
+        let attributes = [NSAttributedString.Key.font: selectedTextFont]
         let title = items[index]
         let width = title.hl_width(attributes: attributes, height: bounds.height) + cellInset * 2.0
         let indexPath = IndexPath(item: index, section: 0)
@@ -219,7 +219,7 @@ protocol HLScrollableSegmentedControlDelegate: class, NSObjectProtocol {
         selectionViewCenterConstraint.constant = bounds.midX - x
         selectionViewWidthConstraint.constant = width
 
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.beginFromCurrentState,
+        UIView.animate(withDuration: duration, delay: 0.0, options: UIView.AnimationOptions.beginFromCurrentState,
             animations: { () -> Void in
                 self.selectionView.setNeedsLayout()
                 self.selectionView.layoutIfNeeded()

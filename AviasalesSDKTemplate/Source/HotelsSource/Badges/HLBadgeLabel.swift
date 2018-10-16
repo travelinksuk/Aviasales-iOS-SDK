@@ -15,7 +15,7 @@ class HLBadgeLabel: UILabel {
     var insets: UIEdgeInsets = UIEdgeInsets(top: 0.0, left: 5.0, bottom: 0.0, right: 5.0)
 
     override func drawText(in rect: CGRect) {
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, self.insets))
+        super.drawText(in: rect.inset(by: self.insets))
     }
 
     func configure(forIcon icon: UIImage) {

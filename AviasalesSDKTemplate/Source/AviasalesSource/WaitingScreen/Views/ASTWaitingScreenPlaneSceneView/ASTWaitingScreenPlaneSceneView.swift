@@ -31,7 +31,7 @@ class ASTWaitingScreenPlaneSceneView: UIView {
     }
 
     private func loadFromXib() {
-        view = Bundle.main.loadNibNamed("ASTWaitingScreenPlaneSceneView", owner: self, options: nil)?.first as! UIView
+        view = (Bundle.main.loadNibNamed("ASTWaitingScreenPlaneSceneView", owner: self, options: nil)?.first as! UIView)
         view.frame = self.bounds
         self.addSubview(view)
     }
@@ -58,7 +58,7 @@ class ASTWaitingScreenPlaneSceneView: UIView {
         animation.autoreverses = true
         animation.repeatCount = HUGE
         animation.isRemovedOnCompletion = false
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
         planeImageView.layer.add(animation, forKey: "plane")
     }

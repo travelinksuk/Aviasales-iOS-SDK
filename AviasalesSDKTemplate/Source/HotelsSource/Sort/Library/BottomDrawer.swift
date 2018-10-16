@@ -36,7 +36,7 @@ class BottomDrawerView: UIView {
 
 public class BottomDrawer: UIViewController, UINavigationControllerDelegate {
     
-    static var defaultTitleStyleAttributes: [NSAttributedStringKey: Any] = createDefaultStyleAttributes()
+    static var defaultTitleStyleAttributes: [NSAttributedString.Key: Any] = createDefaultStyleAttributes()
     static var defaultActionButtonStyle: ActionButtonStyle = ActionButtonStyle(
         height: kActionButtonHeight,
         backgroundColor: UIColor.white,
@@ -106,7 +106,7 @@ public class BottomDrawer: UIViewController, UINavigationControllerDelegate {
         var height: CGFloat
         var backgroundColor: UIColor
         var selectedBackgroundColor: UIColor
-        var titleAttributes: [NSAttributedStringKey: Any]
+        var titleAttributes: [NSAttributedString.Key: Any]
     }
 
     public var actionButtonStyle = BottomDrawer.defaultActionButtonStyle {
@@ -182,7 +182,7 @@ public class BottomDrawer: UIViewController, UINavigationControllerDelegate {
 
         drawerWindow?.backgroundColor = UIColor.clear
         drawerWindow?.rootViewController = drawerNavigationController
-        drawerWindow?.windowLevel = UIWindowLevelStatusBar + 1
+        drawerWindow?.windowLevel = UIWindow.Level.statusBar + 1
         drawerWindow?.isHidden = false
         drawerWindow?.makeKeyAndVisible()
     }
@@ -335,7 +335,7 @@ public class BottomDrawer: UIViewController, UINavigationControllerDelegate {
         if let title = attributedHandleTitle {
             handleButton.setAttributedTitle(title, for: .normal)
             handleButtonHeightConstraint.constant = kHandleButtonHeight
-            handleButton.contentEdgeInsets = UIEdgeInsetsMake(2, 1, 0, 0)
+            handleButton.contentEdgeInsets = UIEdgeInsets.init(top: 2, left: 1, bottom: 0, right: 0)
             handleButton.alpha = 1
         } else {
             handleButton.setAttributedTitle(nil, for: .normal)
@@ -421,11 +421,11 @@ public class BottomDrawer: UIViewController, UINavigationControllerDelegate {
         if viewController.isEqual(self) {
             navigationController.setNavigationBarHidden(true, animated: true)
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.15) {
-                self.drawerWindow?.windowLevel = UIWindowLevelStatusBar + 1
+                self.drawerWindow?.windowLevel = UIWindow.Level.statusBar + 1
             }
         } else {
             navigationController.setNavigationBarHidden(hidesNavigationBarPermanently, animated: true)
-            drawerWindow?.windowLevel = UIWindowLevelNormal
+            drawerWindow?.windowLevel = UIWindow.Level.normal
         }
     }
 }
@@ -435,31 +435,31 @@ private extension UIViewController {
 
     func addChildViewController(childController: UIViewController?, toFillView containerView: UIView) {
         guard let childController = childController else { return }
-        self.addChildViewController(childController)
+        self.addChild(childController)
         containerView.addSubview(childController.view)
         childController.view.frame = CGRect(origin: .zero, size: containerView.bounds.size)
         childController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        childController.didMove(toParentViewController: self)
+        childController.didMove(toParent: self)
     }
 
     func deleteChildViewController(childController: UIViewController?) {
-        childController?.willMove(toParentViewController: nil)
+        childController?.willMove(toParent: nil)
         childController?.view.removeFromSuperview()
-        childController?.removeFromParentViewController()
+        childController?.removeFromParent()
     }
 }
 
-private func createDefaultStyleAttributes() -> [NSAttributedStringKey: Any] {
+private func createDefaultStyleAttributes() -> [NSAttributedString.Key: Any] {
     return [
-        NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16),
-        NSAttributedStringKey.foregroundColor : UIColor(hue: 0, saturation: 0, brightness: 0.36, alpha: 1),
-        NSAttributedStringKey.kern : 1.0 as AnyObject
+        NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16),
+        NSAttributedString.Key.foregroundColor : UIColor(hue: 0, saturation: 0, brightness: 0.36, alpha: 1),
+        NSAttributedString.Key.kern : 1.0 as AnyObject
     ]
 }
-private func createActionButtonTitleAttributes() -> [NSAttributedStringKey: Any] {
+private func createActionButtonTitleAttributes() -> [NSAttributedString.Key: Any] {
     return [
-        NSAttributedStringKey.font : UIFont.systemFont(ofSize: 16),
-        NSAttributedStringKey.foregroundColor: UIColor(hue: 0, saturation: 0, brightness: 0.5, alpha: 1),
-        NSAttributedStringKey.kern: 1.0 as AnyObject
+        NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16),
+        NSAttributedString.Key.foregroundColor: UIColor(hue: 0, saturation: 0, brightness: 0.5, alpha: 1),
+        NSAttributedString.Key.kern: 1.0 as AnyObject
     ]
 }

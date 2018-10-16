@@ -61,7 +61,7 @@ class PeekHotelVC: PeekTableVC {
 
             let room = self.variant.sortedRooms[0]
 
-            let bookBrowserPresenter = BookBrowserViewPresenter(room: room)
+            let bookBrowserPresenter = BookBrowserViewPresenter(variant: self.variant, room: room)
             let browserViewController = BrowserViewController(presenter: bookBrowserPresenter)
             let navigationController = JRNavigationController(rootViewController: browserViewController)
 
