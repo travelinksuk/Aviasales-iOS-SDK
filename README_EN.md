@@ -1,3 +1,11 @@
+Aviasales Travel iOS SDK is deprecated in favor of [Travelpayouts Travel App](https://github.com/travelpayouts/travel-app-ios)
+=================
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
 Aviasales Travel iOS SDK
 =================
 [![CocoaPods](https://img.shields.io/cocoapods/v/AviasalesSDK.svg)](https://cocoapods.org/pods/AviasalesSDK)
