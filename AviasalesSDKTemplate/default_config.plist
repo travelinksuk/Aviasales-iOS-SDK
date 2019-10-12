@@ -16,17 +16,19 @@
 	<string>en</string>
 	<key>firebase_enabled</key>
 	<false/>
-	<key>app_description</key>
+	<key>Travelinks is a travel search website, unbiased and free that compares best flight ,hotel and car deals a site where you would be inspired to plan and book direct from millions of travel options at the best prices.</key>
 	<dict>
 		<key>en</key>
-		<string>App description</string>
+		<string>
+			Travelinks is a travel search website, unbiased and free that compares best flight ,hotel and car deals a site where you would be inspired to plan and book direct from millions of travel options at the best prices.
+		</string>
 		<key>ru</key>
 		<string>Описание приложения</string>
 	</dict>
 	<key>feedback_email</key>
-	<string></string>
+	<string>enquiry@travelinks.co.uk</string>
 	<key>itunes_link</key>
-	<string></string>
+	<string>https://www.apple.com/uk/itunes/</string>
 	<key>search_params</key>
 	<dict>
 		<key>default_currency</key>
